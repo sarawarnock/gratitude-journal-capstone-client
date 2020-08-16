@@ -1,68 +1,149 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Gratitude Journal Capstone Client
 
-## Available Scripts
+Purpose: to provide a space for a registered user to make short gratitude journal entries and click a simple button for “overall mood" to keep track of their day and what they are grateful for.
 
-In the project directory, you can run:
+## Working Prototype
+You can access a working prototype of the React app here: https://legoinventory.herokuapp.com/ and Node app here: https://workout-creator-server.herokuapp.com/
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## User Stories
+This app is for two types of users; a visitor, and a logged-in user.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+#### Landing Page
+* as a non-registered user
+* I want to understand what I can do with this app (or sign up, or log in)
+* so I can decide if I want to make an account and use it
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Sign Up
+* as a non-registered user
+* I want to create a username and password
+* so I can create my account and use the service.
 
-### `npm run build`
+#### Login Page
+* As a registered user
+* I want to log in to my account
+* So I can create a workout or view my saved workouts
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Navbar
+* As a registered user
+* I want to be able to nagivate to different sections of the app
+* So I can easily see all of the features
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+#### New Journal Entry Page
+* As a registered user
+* I want to fill out a new journal entry
+* So I can keep track of what I am grateful for each day
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### All Journal Entries Page
+* As a registered user
+* I want to view my all of my journal entries
+* So I can notice patterns in my mood and keep track of how I'm feeling
 
-### `npm run eject`
+#### Forgot Password
+* As a registered user
+* I want to update/change my password when I forget it
+* So that I can log back into my account
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Wireframes
+Landing/Login Page 
+:-------------------------:
+![Landing Page](/github-images/wireframes/landing-page.jpg) 
+Sign Up Page
+![Sign Up Page](/github-images/wireframes/sign-up.jpg)
+Login Page
+![Login Page](/github-images/wireframes/user-login.jpg)
+Forgot Password Page
+![Forgot Password Page](/github-images/wireframes/forgot-password.jpg)
+Personalized Home Page
+![Personalized Home Page](/github-images/wireframes/personalized-home-page.jpg)
+Create Workout Page
+![Create Workout Page](/github-images/wireframes/create-workout.jpg)
+Past Workouts Page
+![Past Workouts Page](/github-images/wireframes/past-workouts.jpg)
+View Past Workout Page
+![View Past Workout Page](/github-images/wireframes/view-past-workout.jpg)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Screenshots
+Landing/Login Page 
+:-------------------------:
+![Landing Page](/github-images/screenshots/landing-page.jpg)  
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Functionality
+The app's functionality includes:
+* Every User has the ability to create journal entries 
+* a journal entry will consist of: a bullet point list and an "overall mood" button
+    * inputs
+        * gratitude points
+        * overall mood (choice between 3)
+    * output
+        * finished journal entry
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Front-end Structure - React Components Map
+* __Index.js__ (stateless)
+    * __App.js__ (stateful)
+        * __header.js__ (stateless)
+        * __landing-page.js__ (stateful) - gets the _"prop name"_ and the _"callback prop name"_ from the __App.js__
+            * __login.js__ (stateful) -
+            * __sign-up.js__ (stateful) -
+        * __navbar.js__ (stateless) -
+        * __all-journal-entires.js__ (stateless) -
+        * __create-journal-entry.js__ (stateful) -
+        * __button.js__ (stateless -)
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Back End Structure - Business Objects (database structure)
 
-### Analyzing the Bundle Size
+* users
+    * id
+    * user_name
+    * password
+    * first_name
+    * last_name
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+* journal_entries
+    * id
+    * title (varchar)
+    * date (date)
+    * bullet_1 (varchar)
+    * bullet_2 (varchar)
+    * bullet_3 (varchar)
+    * mood (varchar)
 
-### Making a Progressive Web App
+## Technology
+* Front-End: HTML5, CSS3, JavaScript ES6, React
+* Back-End: Node.js, Express.js, Mocha, Chai, RESTful API Endpoints, Postgres
+* Development Environment: Heroku, DBeaver
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## API Documentation
+API Documentation details: 
 
-### Advanced Configuration
+## Responsive
+App is built to be usable on mobile devices, as well as responsive across mobile, tablet, laptop, and desktop screen resolutions.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## Development Roadmap
+This is v1.0 of the app, but future enhancements are expected to include:
+* Forgot Password 
+* More than 3 gratitude points (a + component)
+* Add/upload photos
+* Weather report for your location (mood based on weather)
+* Send reminders to jounral
+* Separate past entries into weeks
 
-### Deployment
+## How to run it
+Use command line to navigate into the project folder and run the following in terminal
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+### Local Node scripts
+* To install the node project ===> npm install
+* To migrate the database ===> npm run migrate -- 1
+* To run Node server (on port 8000) ===> npm run dev
+* To run tests ===> npm run test
 
-### `npm run build` fails to minify
+### Local React scripts
+* To install the react project ===> npm install
+* To run react (on port 3000) ===> npm start
+* To run tests ===> npm run test
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
