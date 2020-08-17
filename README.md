@@ -51,19 +51,15 @@ Landing/Login Page
 :-------------------------:
 ![Landing Page](/github-images/wireframes/landing-page.jpg) 
 Sign Up Page
-![Sign Up Page](/github-images/wireframes/sign-up.jpg)
+![Sign Up Page](/github-images/wireframes/signup.jpg)
 Login Page
-![Login Page](/github-images/wireframes/user-login.jpg)
+![Login Page](/github-images/wireframes/login.jpg)
 Forgot Password Page
 ![Forgot Password Page](/github-images/wireframes/forgot-password.jpg)
-Personalized Home Page
-![Personalized Home Page](/github-images/wireframes/personalized-home-page.jpg)
-Create Workout Page
-![Create Workout Page](/github-images/wireframes/create-workout.jpg)
-Past Workouts Page
-![Past Workouts Page](/github-images/wireframes/past-workouts.jpg)
-View Past Workout Page
-![View Past Workout Page](/github-images/wireframes/view-past-workout.jpg)
+New Entry Page
+![Create Workout Page](/github-images/wireframes/new-entry.jpg)
+All Entries Page
+![Past Workouts Page](/github-images/wireframes/all-entries.jpg)
 
 
 ## Screenshots
