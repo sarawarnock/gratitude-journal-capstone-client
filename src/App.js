@@ -1,26 +1,89 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Link, Switch } from 'react-router-dom'
+import './App.css'
+import config from './config'
+import TokenService from './services/token-service'
+import Navbar from './navbar'
+import Header from './header'
+import Login from './log-in'
+import SignUp from './sign-up'
+import LandingPage from './landing-page'
+import NotFoundPage from './not-found-page'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user_name: '',
+      password: '',
+      first_name: '',
+      last_name: '',
+      allEntries: [],
+    }
+  }
+
+  //renders the Navbar
+  renderNav() {
+    return (
+      <div>
+        <Navbar />
+      </div>
+    )
+  }
+
+  //renders the main pages
+  renderMainPages = () => {
+    return (
+      <div className="main-pages">
+        <Switch>
+          <Route 
+            exact
+            path='/'
+            component={LandingPage}
+          />
+          <Route 
+            exact
+            path='/signup'
+            component={SignUp}
+          />
+          <Route 
+            exact
+            path='/login'
+            component={Login}
+          />
+          <Route 
+            exact
+            path='/home'
+            component={AllEntries}
+          />
+          <Route 
+            exact
+            path='/new-entry'
+            component={NewEntry}
+          />
+          <Route 
+            component={NotFoundPage}
+          />
+        </Switch>
+      </div>
+    )
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <nav className="app-nav"> {this.renderNav()} </nav>
+        <header>
+          <Link to='/'>
+            <Header />
+          </Link>
+        </header>
+
+        <main>
+          {this.renderMainPages()}
+        </main>
+      </div>
+    );
+  }
 }
-
-export default App;
