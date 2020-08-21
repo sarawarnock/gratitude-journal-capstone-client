@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import ErrorBoundary from './error-boundary'
 import ValidationError from './validation-error'
-import AuthApiService from './services/auth-api-service'
-import TokenService from './services/token-service'
+import AuthApiService from '../services/auth-api-service'
+import TokenService from '../services/token-service'
 
 export default class SignUp extends React.Component {
   state = {

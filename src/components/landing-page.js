@@ -9,7 +9,7 @@ export default class LandingPage extends React.Component {
           <h1>Gratiplicity: Your Daily Gratitude Jounal</h1>
             <p>Keep track of the things you're grateful for, simply.</p>
             <p>Jot down 3 things that made you smile each day and keep track of your overall mood.</p>
-          <button className="big-btn"> <Link to='/sign-up'> Sign Up </Link>
+          <button className="big-btn"> <Link to='/signup'> Sign Up </Link>
           </button>
           <button className="big-btn"> <Link to='/login'> Login</Link> </button>
           <p>To login: </p>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import config from './config'
-import TokenService from './services/token-service.js';
+//import config from '../config'
+//import TokenService from '../services/token-service.js';
 
 export default class NewEntry extends Component {
     state ={
