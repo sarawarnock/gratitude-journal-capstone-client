@@ -95,19 +95,21 @@ The app's functionality includes:
 
 * users
     * id
-    * user_name
-    * password
-    * first_name
-    * last_name
+    * user_name (minimum 6 characters)
+    * password (minimum 8 characters, 1 uppercase, 1 symbol)
+    * first_name (minimum 2 characters)
+    * last_name (minimum 2 characters)
 
 * journal_entries
     * id
+    * user_id
     * title (varchar)
     * date (date)
     * bullet_1 (varchar)
     * bullet_2 (varchar)
     * bullet_3 (varchar)
     * mood (varchar)
+    * is_public (default: false)
 
 ## Technology
 * Front-End: HTML5, CSS3, JavaScript ES6, React
