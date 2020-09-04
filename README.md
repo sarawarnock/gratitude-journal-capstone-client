@@ -54,8 +54,8 @@ Sign Up Page
 ![Sign Up Page](/github-images/wireframes/signup.jpg)
 Login Page
 ![Login Page](/github-images/wireframes/login.jpg)
-Forgot Password Page
-![Forgot Password Page](/github-images/wireframes/forgot-password.jpg)
+<!-- Forgot Password Page
+![Forgot Password Page](/github-images/wireframes/forgot-password.jpg) -->
 New Entry Page
 ![Create Workout Page](/github-images/wireframes/new-entry.jpg)
 All Entries Page
