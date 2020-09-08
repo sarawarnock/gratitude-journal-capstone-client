@@ -1,0 +1,403 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`All Entries componenet renders the UI as expected 1`] = `
+<div
+  className="App"
+>
+  <main
+    className="main"
+  >
+    <h1>
+      My Journal
+    </h1>
+    <div>
+      <h2 />
+      <p>
+         
+        Test 1
+         
+      </p>
+      <p>
+         
+        Test 2
+         
+      </p>
+      <p>
+         
+        Test 3
+         
+      </p>
+      <p>
+         
+        happy
+         
+      </p>
+    </div>
+    <div>
+      <h2 />
+      <p>
+         
+        Test 1
+         
+      </p>
+      <p>
+         
+        Test 2
+         
+      </p>
+      <p>
+         
+        Test 3
+         
+      </p>
+      <p>
+         
+        happy
+         
+      </p>
+    </div>
+    <a
+      href="/newentry"
+      onClick={[Function]}
+    >
+      <button>
+        New Entry
+      </button>
+    </a>
+  </main>
+</div>
+`;
+
+exports[`Header component renders the UI as expected 1`] = `
+<div
+  className="App"
+>
+  <main
+    className="main"
+  >
+    <h1>
+      Gratiplicity: the daily gratitude journal
+    </h1>
+  </main>
+</div>
+`;
+
+exports[`Landing Page component renders the UI as expected 1`] = `
+<div
+  className="App"
+>
+  <main
+    className="main"
+  >
+    <h1>
+      Gratiplicity: Your Daily Gratitude Jounal
+    </h1>
+    <p>
+      Keep track of the things you're grateful for, simply.
+    </p>
+    <p>
+      Jot down 3 things that made you smile each day and keep track of your overall mood.
+    </p>
+    <button
+      className="big-btn"
+    >
+       
+      <a
+        href="/signup"
+        onClick={[Function]}
+      >
+         Sign Up 
+      </a>
+    </button>
+    <button
+      className="big-btn"
+    >
+       
+      <a
+        href="/login"
+        onClick={[Function]}
+      >
+         Login
+      </a>
+       
+    </button>
+    <p>
+      To login: 
+    </p>
+    <p>
+      username: testuser
+    </p>
+    <p>
+      password: Testpassword1
+    </p>
+  </main>
+</div>
+`;
+
+exports[`Login component renders the UI as expected 1`] = `
+<div
+  className="App"
+>
+  <main>
+    <h1>
+      Log In
+    </h1>
+    <form
+      className="login-form"
+      onSubmit={[Function]}
+    >
+      <label
+        className="user-label"
+        htmlFor="username"
+      >
+        Username
+      </label>
+      <input
+        id="username"
+        name="loginUsername"
+        onChange={[Function]}
+        placeholder="Username"
+        required={true}
+        type="text"
+      />
+      <label
+        className="user-label"
+        htmlFor="password"
+      >
+        Password
+      </label>
+      <input
+        id="password"
+        name="loginPassword"
+        onChange={[Function]}
+        placeholder="Password"
+        required={true}
+        type="password"
+      />
+      <button
+        className="small-btn"
+        type="submit"
+      >
+         Log In 
+      </button>
+    </form>
+    <div>
+      <h2>
+        Don't have an account yet?
+      </h2>
+      <a
+        href="/signup"
+        onClick={[Function]}
+      >
+        <button
+          className="small-btn"
+        >
+          Sign Up
+        </button>
+      </a>
+    </div>
+  </main>
+</div>
+`;
+
+exports[`Navbar component renders the UI as expected 1`] = `
+<div
+  className="navbar"
+>
+  <nav
+    className="nav"
+    role="navigation"
+  >
+    
+  </nav>
+</div>
+`;
+
+exports[`New Entry component renders the UI as expected 1`] = `
+<div
+  className="App"
+>
+  <div>
+    <form>
+      <div
+        className="gratitude-values"
+      >
+        <h2>
+           What are you grateful for today? 
+        </h2>
+        <ul>
+          <li>
+            <input
+              name="gratitudeValue"
+              placeholder="#1"
+              type="text"
+            />
+          </li>
+          <li>
+            <input
+              name="gratitudeValue"
+              placeholder="#2"
+              type="text"
+            />
+          </li>
+          <li>
+            <input
+              name="gratitudeValue"
+              placeholder="#3"
+              type="text"
+            />
+          </li>
+        </ul>
+      </div>
+      <div
+        className="overall-mood"
+      >
+        <h2>
+          What is your overall mood?
+        </h2>
+        <input
+          id="happy"
+          name="overallMood"
+          type="radio"
+          value="Happy"
+        />
+        <label
+          htmlFor="happy"
+        >
+          Happy
+        </label>
+        <input
+          id="ok"
+          name="overallMood"
+          type="radio"
+          value="OK"
+        />
+        <label
+          htmlFor="ok"
+        >
+          OK
+        </label>
+        <input
+          id="sad"
+          name="overallMood"
+          type="radio"
+          value="Sad"
+        />
+        <label
+          htmlFor="sad"
+        >
+          Sad
+        </label>
+      </div>
+      <br />
+      <div>
+        <button
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Not Found component renders the UI as expected 1`] = `
+<div>
+  <h1>
+    Page Not Found!
+  </h1>
+</div>
+`;
+
+exports[`Sign Up component renders the UI as expected 1`] = `
+<div
+  className="App"
+>
+  <main>
+    <h1>
+      Sign Up
+    </h1>
+    <form
+      className="signup-form"
+      onSubmit={[Function]}
+    >
+      <div
+        className="signup-email"
+      >
+        <label
+          className="user-label"
+          htmlFor="email"
+        >
+          Email
+        </label>
+        <input
+          id="email"
+          name="signUpEmail"
+          onChange={[Function]}
+          placeholder="Email"
+          required={true}
+          type="text"
+        />
+      </div>
+      <div
+        className="signup-password"
+      >
+        <label
+          className="user-label"
+          htmlFor="password"
+        >
+          Password (one capital letter and one number needed)
+        </label>
+        <input
+          id="password"
+          name="signUpPassword"
+          onChange={[Function]}
+          placeholder="Password"
+          required={true}
+          type="password"
+        />
+      </div>
+      <div
+        className="signup-name"
+      >
+        <label
+          className="user-label"
+          htmlFor="fname"
+        >
+          First Name
+        </label>
+        <input
+          id="fname"
+          name="signUpFirstName"
+          onChange={[Function]}
+          placeholder="First Name"
+          required={true}
+          type="text"
+        />
+      </div>
+      <button
+        className="small-btn"
+        type="submit"
+      >
+        Sign Up!
+      </button>
+    </form>
+    <div>
+      <h2>
+        Already have an account?
+      </h2>
+      <button
+        className="small-btn"
+      >
+        <a
+          href="/login"
+          onClick={[Function]}
+        >
+          Login
+        </a>
+      </button>
+    </div>
+  </main>
+</div>
+`;

@@ -1,46 +1,29 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default class AllEntries extends React.Component {
-    render() {
-        return (
-            <div className="App">
-                <main className="main">
-                    {/* <h1>All Entries</h1>
-                    <table className="workouts-table">
-                        <thead>
-                            <tr>
-                                <th className="tb-name">Name</th>
-                                <th className="tb-id">Workout ID</th>
-                                <th className="tb-view">View Workout</th>
-                            </tr>
-                        </thead>
-                    <tbody>
-                        {props.allEntries.map(workout => {
+export default function AllEntries(props) {
+    console.log(props.allEntries)
+    if (props.allEntries.length === 0) {
+        return 'Sorry, no entries to display!'
+    } else
+    return (
+        <div className="App">
+            <main className="main">
+                <h1>My Journal</h1>
+                    {props.allEntries.map(entry => {
                         return (
-                            <tr>
-                                <td>{workout.workouts_name}</td>
-                                <td> {workout.id} </td>
-                                <td>
-                                    <button>
-                                    <Link
-                                    to={`/past-workouts/${workout.id}`}
-                                    >
-                                    View
-                                    </Link>
-                                    </button>
-                                </td>
-                            </tr>
-                        )})}
-                    </tbody>
-                    </table>
-                <Link
-                    to='/newentry'
-                >
+                            <div>
+                                <h2>{entry.title}</h2>
+                                <p> {entry.bullet_1} </p>
+                                <p> {entry.bullet_2} </p>
+                                <p> {entry.bullet_3} </p>
+                                <p> {entry.mood} </p>
+                            </div>
+                    )})}
+                <Link to='/newentry'>
                     <button>New Entry</button>
-                </Link> */}
-                </main>
-            </div>
-        )
-    }
+                </Link>
+            </main>
+        </div>
+    )
 }

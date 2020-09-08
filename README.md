@@ -23,7 +23,7 @@ This app is for two types of users; a visitor, and a logged-in user.
 #### Login Page
 * As a registered user
 * I want to log in to my account
-* So I can create a workout or view my saved workouts
+* So I can create an entry or view my saved entries
 
 #### Navbar
 * As a registered user
@@ -57,9 +57,9 @@ Login Page
 <!-- Forgot Password Page
 ![Forgot Password Page](/github-images/wireframes/forgot-password.jpg) -->
 New Entry Page
-![Create Workout Page](/github-images/wireframes/new-entry.jpg)
+![New Entry Page](/github-images/wireframes/new-entry.jpg)
 All Entries Page
-![Past Workouts Page](/github-images/wireframes/all-entries.jpg)
+![All Entries Page](/github-images/wireframes/all-entries.jpg)
 
 
 ## Screenshots

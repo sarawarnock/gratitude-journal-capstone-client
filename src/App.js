@@ -29,7 +29,7 @@ export default class App extends React.Component {
   //component did mount to fetch all entries to pass down to other components
   //need an entries by user endpoint 
   componentDidMount() {
-    let getEntriesUrl = `${config.API_ENDPOINT}/entries/user${TokenService.getUserId()}`;
+    let getEntriesUrl = `${config.API_ENDPOINT}/entries/user/${TokenService.getUserId()}`;
     console.log(sessionStorage.user_id)
     fetch(getEntriesUrl)
       .then(response => response.json())
@@ -37,15 +37,16 @@ export default class App extends React.Component {
         this.setState({
           allEntries: entries
         });
+        console.log(this.state.allEntries)
       })
       .catch(error => this.setState({ error }))
-
-    // updateAllEntries = newEntry => {
-    //   this.setState({
-    //     allEntries: [...this.state.allEntries, newEntry]
-    //   })
-    // }
   }
+
+  // updateAllEntries = newEntry => {
+  //   this.setState({
+  //     allEntries: [...this.state.allEntries, newEntry]
+  //   })
+  // }
 
   //renders the Navbar
   renderNav() {
@@ -58,6 +59,7 @@ export default class App extends React.Component {
 
   //renders the main pages
   renderMainPages = () => {
+    console.log(this.state)
     return (
       <div className="main-pages">
         <Switch>
@@ -79,7 +81,7 @@ export default class App extends React.Component {
           <Route 
             exact
             path='/home'
-            component={AllEntries}
+            render={(props) => <AllEntries {...props} allEntries={this.state.allEntries} />}
           />
           <Route 
             exact

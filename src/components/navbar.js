@@ -20,8 +20,8 @@ export default class Navbar extends React.Component {
                   <input type="checkbox" id="hamburger"/> */}
           {TokenService.hasAuthToken() ? <div className='nav-token'>
             <ul className="menu">
-              <li className="nav-link cl-create-workout"> <Link to='/create-workout'>New Entry</Link></li>
-              <li className="nav-link cl-past-workouts"><Link to='/past-workouts'>All Entries</Link></li>
+              <li className="nav-link"> <Link to='/newentry'>New Entry</Link></li>
+              <li className="nav-link"><Link to='/home'>Home</Link></li>
             </ul>
             <button className="small-btn logout-btn"><Link to="/" onClick={this.logOutClick}>Log Out</Link></button>
           </div> : ''}
