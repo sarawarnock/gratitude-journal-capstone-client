@@ -5,9 +5,120 @@ import React, { Component } from "react";
 export default class NewEntry extends Component {
     state ={
         username: '',
+        sessionUser: '',
+        isSubmitted: false,
+        bullet_1: '',
+        bullet_2: '',
+        bullet_3: '',
+        mood: '',
+        title: ''
+    }
+
+    updateSessionUser(userId) {
+        this.setState({
+          sessionUser: userId
+        })
+    }
+
+    componentDidMount() {
+        this.updateSessionUser(sessionStorage.user_id)
+    }
+
+    handleGratitudeValue1Change = (e) => {
+        this.setState({
+            bullet_1: e.target.value
+        })
+    }
+
+    handleGratitudeValue2Change = (e) => {
+        this.setState({
+            bullet_2: e.target.value
+        })
+    }
+
+    handleGratitudeValue3Change = (e) => {
+        this.setState({
+            bullet_3: e.target.value
+        })
+    }
+
+    handleMoodChange = (e) => {
+        this.setState({
+            mood: e.target.value
+        })
+    }
+
+    handleTitleChange = (e) => {
+        this.setState({
+            title: e.target.value
+        })
+    }
+
+    checkString(inputString) {
+        let outputText = inputString;
+        if (inputString === undefined) {
+            outputText = "";
+        }
+        if (inputString == null) {
+            outputText = "";
+        }
+        return outputText;
     }
 
     //onSubmit = post to database
+    handleSubmit = (e) => {
+        e.preventDefault();
+
+        let payload = {
+            title: this.checkString(data.title),
+            user_id: sessionStorage.user_id,
+            bullet_1: this.checkString(data.gratitudeValue1),
+            bullet_2: this.checkString(data.gratitudeValue2),
+            bullet_3: this.checkString(data.gratitudeValue3),
+            mood: this.checkString(data.overallMood),
+            //is_public: 0
+        }
+
+        fetch(`${config.API_ENDPOINT}/entries`, {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+          })
+            // if the api returns data ...
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error('Something went wrong, please try again later.')
+                }
+                 // ... convert it to json
+                 return res.json()
+            })
+                // use the json api output
+            .then(data => {
+              //check if there is meaningfull data
+              console.log(data);
+              // check if there are no results
+              if (data.totalItems === 0) {
+                throw new Error('No data found')
+              }
+              //this.props.allEntries(data);
+              window.location = `/home`
+          })
+            .catch(err => {
+              this.setState({
+                error: err.message
+            })
+          })
+
+        this.setState({
+            bullet_1: data.gratitudeValue1,
+            bullet_2: data.gratitudeValue2,
+            bullet_3: data.gratitudeValue3,
+            mood: data.overallMood,
+            title: data.title
+        })
+    }
 
     render() {
         return (
@@ -18,13 +129,13 @@ export default class NewEntry extends Component {
                             <h2> What are you grateful for today? </h2>
                             <ul>
                                 <li>
-                                    <input type="text" name="gratitudeValue" placeholder="#1" />
+                                    <input type="text" name="gratitudeValue1" placeholder="#1" onChange={this.handleGratitudeValue1Change} />
                                 </li>
                                 <li>
-                                    <input type="text" name="gratitudeValue" placeholder="#2" />
+                                    <input type="text" name="gratitudeValue2" placeholder="#2" onChange={this.handleGratitudeValue2Change} />
                                 </li>
                                 <li>
-                                <input type="text" name="gratitudeValue" placeholder="#3" />
+                                <input type="text" name="gratitudeValue3" placeholder="#3" onChange={this.handleGratitudeValue3Change} />
                                 </li>
                             </ul>
                         </div>
@@ -38,6 +149,10 @@ export default class NewEntry extends Component {
 
                             <input type="radio" id="sad" name="overallMood" value="Sad" onClick={this.handleMoodChange} />
                             <label htmlFor="sad">Sad</label>
+                        </div>
+                        <div>
+                            Name your entry:
+                            <input type="text" name="title" placeholder="Title" onChange={this.handleTitleChange} />
                         </div>
                         <br />
                         <div>
