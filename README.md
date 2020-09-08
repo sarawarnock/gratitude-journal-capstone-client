@@ -3,7 +3,7 @@
 Purpose: to provide a space for a registered user to make short gratitude journal entries and click a simple button for “overall mood" to keep track of their day and what they are grateful for.
 
 ## Working Prototype
-You can access a working prototype of the React app here: https://legoinventory.herokuapp.com/ and Node app here: https://workout-creator-server.herokuapp.com/
+You can access a working prototype of the React app here: https://legoinventory.herokuapp.com/ and Node app here: https://gratitude-journal-server.herokuapp.com/
 
 
 ## User Stories
@@ -88,7 +88,7 @@ The app's functionality includes:
         * __navbar.js__ (stateless) -
         * __all-journal-entires.js__ (stateless) -
         * __create-journal-entry.js__ (stateful) -
-        * __button.js__ (stateless -)
+        * __button.js__ (stateless) -
 
 
 ## Back End Structure - Business Objects (database structure)
