@@ -22,7 +22,29 @@ export default class App extends React.Component {
       first_name: '',
       last_name: '',
       allEntries: [],
+      error: ''
     }
+  }
+
+  //component did mount to fetch all entries to pass down to other components
+  //need an entries by user endpoint 
+  componentDidMount() {
+    let getEntriesUrl = `${config.API_ENDPOINT}/entries/user${TokenService.getUserId()}`;
+    console.log(sessionStorage.user_id)
+    fetch(getEntriesUrl)
+      .then(response => response.json())
+      .then(entries => {
+        this.setState({
+          allEntries: entries
+        });
+      })
+      .catch(error => this.setState({ error }))
+
+    // updateAllEntries = newEntry => {
+    //   this.setState({
+    //     allEntries: [...this.state.allEntries, newEntry]
+    //   })
+    // }
   }
 
   //renders the Navbar
@@ -61,7 +83,7 @@ export default class App extends React.Component {
           />
           <Route 
             exact
-            path='/new-entry'
+            path='/newentry'
             component={NewEntry}
           />
           <Route 

@@ -243,9 +243,9 @@ handleSubmit = (event) => {
       <div className="App">
         <main>
             <h1>Sign Up</h1>
-                <form className="sign-up-form" onSubmit={this.handleSubmit}>
+                <form className="signup-form" onSubmit={this.handleSubmit}>
                 
-                    <div className="sign-up-email">
+                    <div className="signup-email">
                     <label className ="user-label" htmlFor="email">Email</label>
                     <input 
                       name="signUpEmail"
@@ -257,7 +257,7 @@ handleSubmit = (event) => {
                     />
                     {this.state.signUpEmail.touched && <ValidationError message={emailError} />}
                     </div>
-                    <div className="sign-up-password">
+                    <div className="signup-password">
                     <label className ="user-label" htmlFor="password">Password (one capital letter and one number needed)</label>
                     <input 
                       name="signUpPassword"
@@ -269,7 +269,7 @@ handleSubmit = (event) => {
                     /> 
                     {this.state.signUpPassword.touched && <ValidationError message={passwordError} />}
                     </div>
-                    <div className="sign-up-name">
+                    <div className="signup-name">
                     <label className ="user-label" htmlFor="fname">First Name</label>
                     <input 
                       name="signUpFirstName"

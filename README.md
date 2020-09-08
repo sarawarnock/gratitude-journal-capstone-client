@@ -84,7 +84,7 @@ The app's functionality includes:
         * __header.js__ (stateless)
         * __landing-page.js__ (stateful) - gets the _"prop name"_ and the _"callback prop name"_ from the __App.js__
             * __login.js__ (stateful) -
-            * __sign-up.js__ (stateful) -
+            * __signup.js__ (stateful) -
         * __navbar.js__ (stateless) -
         * __all-journal-entires.js__ (stateless) -
         * __create-journal-entry.js__ (stateful) -

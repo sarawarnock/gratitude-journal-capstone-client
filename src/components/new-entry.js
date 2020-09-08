@@ -4,8 +4,10 @@ import React, { Component } from "react";
 
 export default class NewEntry extends Component {
     state ={
-        user_name: '',
+        username: '',
     }
+
+    //onSubmit = post to database
 
     render() {
         return (
@@ -36,6 +38,10 @@ export default class NewEntry extends Component {
 
                             <input type="radio" id="sad" name="overallMood" value="Sad" onClick={this.handleMoodChange} />
                             <label htmlFor="sad">Sad</label>
+                        </div>
+                        <br />
+                        <div>
+                            <button type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

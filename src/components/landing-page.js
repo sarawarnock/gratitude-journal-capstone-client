@@ -13,7 +13,7 @@ export default class LandingPage extends React.Component {
           </button>
           <button className="big-btn"> <Link to='/login'> Login</Link> </button>
           <p>To login: </p>
-            <p>email: testuser@gmail.com</p>
+            <p>username: testuser</p>
             <p>password: Testpassword1</p>
         </main>
       </div>

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link  } from 'react-router-dom'
 import ValidationError from './validation-error'
-import AuthApiService from './services/auth-api-service'
-import TokenService from './services/token-service'
+import AuthApiService from '../services/auth-api-service'
+import TokenService from '../services/token-service'
 
 export default class Login extends React.Component {
   state = {
@@ -26,7 +26,7 @@ export default class Login extends React.Component {
     window.location = '/user/home'
   }
   
-  updateEmail(username) {
+  updateUsername(username) {
     this.setState({ loginUsername: {value: username, touched: true } })
   }
 
@@ -40,13 +40,14 @@ export default class Login extends React.Component {
     })
   }
 
-  validateEmail(inputUsername) {
+  validateUsername(inputUsername) {
     if (inputUsername == undefined) {
        inputUsername = this.state.loginUsername.value.trim();
     }
-    const usernameFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    //const usernameFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const usernameFormat = /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
     if (!inputUsername.match(usernameFormat)) {
-      return 'Valid email is required'
+      return 'Valid username is required'
     } return ' '
   }
 
@@ -77,9 +78,9 @@ export default class Login extends React.Component {
     console.log(data)
     let {loginUsername, loginPassword} = data
   
-    if (this.validateEmail(loginUsername) === '') {
+    if (this.validateUsername(loginUsername) === '') {
       this.setState({
-        error: 'You must enter a valid email'
+        error: 'You must enter a valid username'
       })
     }
     if (this.validatePassword(loginPassword) === '') {
@@ -101,14 +102,14 @@ export default class Login extends React.Component {
     console.log(this.state)
 
     AuthApiService.postLogin({
-      email: loginUsername,
+      username: loginUsername,
       password: loginPassword
     })
     .then(response => {
       if (response === undefined) {
         console.log('empty response')
         this.setState({
-          error: 'Email and/or password are not valid'
+          error: 'Username and/or password are not valid'
         })
         console.log(this.state)
       }
@@ -125,12 +126,12 @@ export default class Login extends React.Component {
     .catch(err => {
       console.log(err)
       this.setState({
-        error: 'Email and/or password are not valid'
+        error: 'Username and/or password are not valid'
       })
     });
   }
 
-  //logic that says - if user email matches password combo in "users"
+  //logic that says - if user username matches password combo in "users"
   //show them their homepage
 
   render() {
@@ -139,7 +140,7 @@ export default class Login extends React.Component {
       validationError = this.state.error
     }
     
-    const emailError = this.validateEmail();
+    const usernameError = this.validateUsername();
     const passwordError = this.validatePassword();
     return (
       <div className="App">
@@ -150,16 +151,16 @@ export default class Login extends React.Component {
                   onSubmit={this.handleSubmit}
                 >
                   {validationError}
-                    <label className ="user-label" htmlFor="email">Email</label>
+                    <label className ="user-label" htmlFor="username">Username</label>
                     <input 
                       name="loginUsername"
                       type="text" 
-                      id="email"
-                      placeholder="Email"
-                      onChange={e => this.updateEmail(e.target.value)}
+                      id="username"
+                      placeholder="Username"
+                      onChange={e => this.updateUsername(e.target.value)}
                       required
                     />
-                    {this.state.loginUsername.touched && <ValidationError message={emailError} />}
+                    {this.state.loginUsername.touched && <ValidationError message={usernameError} />}
                     
                     <label className ="user-label" htmlFor="password">Password</label>
                     <input 
@@ -175,7 +176,7 @@ export default class Login extends React.Component {
                 </form>
                 <div>
                     <h2>Don't have an account yet?</h2>
-                    <Link to='/sign-up'><button className="small-btn">Sign Up</button></Link>
+                    <Link to='/signup'><button className="small-btn">Sign Up</button></Link>
                 </div>
         </main>
       </div>
