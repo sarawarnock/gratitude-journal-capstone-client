@@ -133,7 +133,7 @@ export default class NewEntry extends Component {
     render() {
         return (
             <div className="App">
-                <div>
+                <div className="main">
                     <form onSubmit={this.handleSubmit}>
                         <div className="gratitude-values">
                             <h2> What are you grateful for today? </h2>

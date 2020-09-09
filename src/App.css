@@ -44,6 +44,17 @@ a:hover {
   text-decoration: underline;
 }
 
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+
+}
+
+.menu, li {
+  align-content: center;
+}
+
 .nav-token {
   padding: 10px;
   margin: 0;
@@ -60,10 +71,15 @@ ul {
 
 li {
   font-size: 18px;
+  list-style-type: none;
 }
 
 button {
   margin: 3px;
+}
+
+button:hover {
+  background-color: #EBA29D
 }
 
 .landing__container {
@@ -94,32 +110,38 @@ button {
   padding: 0px;
 }
 
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input {
+  margin: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.overall-mood {
+  margin: 10px;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
+@media screen and (min-width: 600px) {
+  .App {
+    display: grid;
+    grid-template-columns: 15% 35% 35% 15%;
+    grid-template-areas: 
+    "nav nav header header "
+    ". main main ."
+    ;
+  }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  header {
+    grid-area: header;
   }
-  to {
-    transform: rotate(360deg);
+
+  .menu {
+    grid-area: nav;
   }
-} */
+
+  main {
+    grid-area: main;
+  }
+
+  .main {
+    grid-area: main;
+  }
+}
