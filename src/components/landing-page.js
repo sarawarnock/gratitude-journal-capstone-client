@@ -6,15 +6,19 @@ export default class LandingPage extends React.Component {
     return (
       <div className="App">
         <main className="main">
-          <h1>Gratiplicity: Your Daily Gratitude Jounal</h1>
-            <p>Keep track of the things you're grateful for, simply.</p>
-            <p>Jot down 3 things that made you smile each day and keep track of your overall mood.</p>
-          <button className="big-btn"> <Link to='/signup'> Sign Up </Link>
-          </button>
-          <button className="big-btn"> <Link to='/login'> Login</Link> </button>
-          <p>To login: </p>
-            <p>username: testuser</p>
-            <p>password: Testpassword1</p>
+          {/* <h1>Gratiplicity</h1>
+            <h2>Your Daily Gratitude Jounal</h2> */}
+            <div className="landing__container">
+              <p>Keep track of the things you're grateful for, simply.</p>
+              <p>Jot down 3 things that make you smile each day and keep track of your overall mood.</p>
+              <button> <Link to='/signup'> Sign Up </Link></button>
+              <button> <Link to='/login'> Login</Link> </button>
+          </div>
+          <div className="login__container">
+            <p>To login: </p>
+              <p>username: testuser</p>
+              <p>password: Testpassword1</p>
+            </div>
         </main>
       </div>
     );

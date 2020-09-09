@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-//import config from '../config'
-//import TokenService from '../services/token-service.js';
+import config from '../config'
+import TokenService from '../services/token-service.js';
 
 export default class NewEntry extends Component {
     state ={
@@ -69,6 +69,16 @@ export default class NewEntry extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
+        const data = {}
+        //get all the from data from the form component
+        const formData = new FormData(e.target)
+
+        //for each of the keys in form data populate it with form value
+        for (let value of formData) {
+            data[value[0]] = value[1]
+        }
+        console.log(data)
+
         let payload = {
             title: this.checkString(data.title),
             user_id: sessionStorage.user_id,
@@ -78,7 +88,7 @@ export default class NewEntry extends Component {
             mood: this.checkString(data.overallMood),
             //is_public: 0
         }
-
+        console.log(JSON.stringify(payload))
         fetch(`${config.API_ENDPOINT}/entries`, {
             method: 'POST',
             headers: {

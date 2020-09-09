@@ -1,5 +1,10 @@
+body {
+  background-color: #F2E3CE;
+}
+
 .App {
   text-align: center;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .App-logo {
@@ -7,8 +12,40 @@
   pointer-events: none;
 }
 
+h1 {
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 44px;
+  color: grey;
+  padding: 0px;
+  margin: 5px;
+}
+
+h2 {
+  color: #EBA29D;
+  font-size: 28px;
+  margin: 0px;
+}
+
+p {
+  font-size: 20px;
+  color: grey;
+}
+
+a {
+  color: grey;
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .nav-token {
-  padding: 0;
+  padding: 10px;
   margin: 0;
 }
 
@@ -17,10 +54,47 @@
 }
 
 ul {
+  font-size: 16px;
   padding: 0px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+li {
+  font-size: 18px;
+}
+
+button {
+  margin: 3px;
+}
+
+.landing__container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid white;
+  padding: 10px;
+  margin: 10px;
+}
+
+.landing__container, p {
+  align-items: center;
+}
+
+.login__container {
+  display: flex;
+  text-align: center;
+  /* border: 1px solid white; */
+  margin: 10px;
+  padding: 10px;
+}
+
+.login__container, p {
+  flex-direction: column;
+  align-items: center;
+  margin: 3px;
+  padding: 0px;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
@@ -48,4 +122,4 @@ ul {
   to {
     transform: rotate(360deg);
   }
-}
+} */
