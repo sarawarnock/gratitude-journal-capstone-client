@@ -86,9 +86,9 @@ export default class NewEntry extends Component {
             bullet_2: this.checkString(data.gratitudeValue2),
             bullet_3: this.checkString(data.gratitudeValue3),
             mood: this.checkString(data.overallMood),
-            //is_public: 0
+            is_public: 0
         }
-        console.log(JSON.stringify(payload))
+        console.log(payload)
         fetch(`${config.API_ENDPOINT}/entries`, {
             method: 'POST',
             headers: {
@@ -160,12 +160,12 @@ export default class NewEntry extends Component {
                             <input type="radio" id="sad" name="overallMood" value="Sad" onClick={this.handleMoodChange} />
                             <label htmlFor="sad">Sad</label>
                         </div>
-                        <div>
+                        <div className="entry-name">
                             Name your entry:
                             <input type="text" name="title" placeholder="Title" onChange={this.handleTitleChange} />
                         </div>
                         <br />
-                        <div>
+                        <div className="submit-button">
                             <button type="submit">Submit</button>
                         </div>
                     </form>

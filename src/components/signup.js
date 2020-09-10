@@ -8,7 +8,7 @@ import TokenService from '../services/token-service'
 export default class SignUp extends React.Component {
   state = {
       error: null,
-      signUpEmail: {
+      signUpUsername: {
         value: '',
         touched: false
       },
@@ -20,10 +20,15 @@ export default class SignUp extends React.Component {
         value: '',
         touched: false
       },
+      signUpLastName: {
+        value: '',
+        touched: false
+      },
       errors: {
-        signUpEmail: 'You must enter a valid email',
+        signUpUsername: 'You must enter a valid username',
         signUpPassword: 'You must enter a valid password',
-        signUpFirstName: 'You must enter a valid name'
+        signUpFirstName: 'You must enter a valid name',
+        signUpLastName: 'You must enter a valid name'
       },
       sessionUser: ''
   }
@@ -34,8 +39,8 @@ export default class SignUp extends React.Component {
   //   return queryItems.join('&')
   // }
 
-  updateEmail(email) {
-    this.setState({ signUpEmail: {value: email, touched: true } })
+  updateUsername(username) {
+    this.setState({ signUpUsername: {value: username, touched: true } })
   }
 
   updatePassword(password) {
@@ -46,19 +51,23 @@ export default class SignUp extends React.Component {
     this.setState({ signUpFirstName: { value: firstName, touched: true } })
   }
 
+  updateLastName(lastName) {
+    this.setState({ signUpLastName: { value: lastName, touched: true } })
+  }
+
   updateSessionUser(userId) {
     this.setState({
       sessionUser: userId
     })
   }
 
-  validateEmail(inputEmail) {
-    if (inputEmail == undefined) {
-       inputEmail = this.state.signUpEmail.value.trim();
+  validateUsername(inputUsername) {
+    if (inputUsername == undefined) {
+       inputUsername = this.state.signUpUsername.value.trim();
     }
     const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (!inputEmail.match(mailFormat)) {
-      return 'Valid email is required'
+    if (!inputUsername.match(mailFormat)) {
+      return 'Valid username is required'
     } return ' '
   }
 
@@ -82,22 +91,33 @@ export default class SignUp extends React.Component {
     } return ' '
   }
 
+  validatateLastName(inputLastName) {
+    if (inputLastName == undefined) {
+      inputLastName = this.state.signUpLastName.value.trim();
+   }
+    const nameFormat = /^[a-zA-Z\-]+$/;
+    if (!inputLastName.match(nameFormat)) {
+      return 'Name needs to be more than 2 characters'
+    } return ' '
+  }
+
 //-------------------------------------------------------------------------------------
 
 handleSubmit = (event) => {
   event.preventDefault();
-  const { signUpEmail, signUpPassword, signUpFirstName } = event.target;
-  console.log('email:', signUpEmail.value, 'password:', signUpPassword.value);
+  const { signUpUsername, signUpPassword, signUpFirstName, signUpLastName } = event.target;
+  console.log('username:', signUpUsername.value, 'password:', signUpPassword.value);
   this.setState({ error: null })
   AuthApiService.postUser({
-      email: signUpEmail.value,
+      username: signUpUsername.value,
       password: signUpPassword.value,
-      first_name: signUpFirstName.value
+      first_name: signUpFirstName.value,
+      last_name: signUpLastName.value
   })
 
   .then(response => {
-      console.log('email:', response)
-      signUpEmail.value = ''
+      console.log('username:', response)
+      signUpUsername.value = ''
       signUpPassword.value = ''
       TokenService.saveAuthToken(response.authToken)
       TokenService.saveUserId(response.userId)
@@ -110,10 +130,10 @@ handleSubmit = (event) => {
       this.setState({ error: res.error })
   })  
 
- //let { signUpEmail, signUpFirstName, signUpPassword } = data
-    // if (this.validateEmail(signUpEmail) === '') {
+ //let { signUpUsername, signUpFirstName, signUpPassword } = data
+    // if (this.validateUsername(signUpUsername) === '') {
     //    this.setState({
-    //        error: 'email is not valid'
+    //        error: 'username is not valid'
     //    })
     //  }
  
@@ -144,10 +164,10 @@ handleSubmit = (event) => {
 //     }
 //     console.log(data)
 
-//     let { signUpEmail, signUpFirstName, signUpPassword } = data
-//     if (this.validateEmail(signUpEmail) === '') {
+//     let { signUpUsername, signUpFirstName, signUpPassword } = data
+//     if (this.validateUsername(signUpUsername) === '') {
 //       this.setState({
-//           error: 'email is not valid'
+//           error: 'username is not valid'
 //       })
 //     }
 
@@ -164,7 +184,7 @@ handleSubmit = (event) => {
 //     }
 
 //     // this.setState({
-//     //   signUpEmail.value: data.signUpEmail, 
+//     //   signUpUsername.value: data.signUpUsername, 
 //     //   signUpFirstName.value : data.signUpFirstName,
 //     //   signUpPassword.value: data.signUpPassword
      
@@ -174,11 +194,11 @@ handleSubmit = (event) => {
 
 //   //check if the state is populated with the search params data
 //   console.log(this.state)
-//   console.log(data.signUpEmail)
+//   console.log(data.signUpUsername)
 
 //   const searchURL = `${config.API_ENDPOINT}/users`
 //   const user = {
-//     email: data.signUpEmail,
+//     username: data.signUpUsername,
 //     password: data.signUpPassword,
 //     first_name: data.signUpFirstName,
 //   }
@@ -235,9 +255,10 @@ handleSubmit = (event) => {
 //--------------------------------------------------------------------------------------
 
   render() {
-    const emailError = this.validateEmail();
+    const usernameError = this.validateUsername();
     const passwordError = this.validatePassword();
-    const nameError = this.validatateFirstName();
+    const firstNameError = this.validatateFirstName();
+    const lastNameError = this.validatateLastName();
     return (
       <ErrorBoundary>
       <div className="App">
@@ -245,17 +266,17 @@ handleSubmit = (event) => {
             <h1>Sign Up</h1>
                 <form className="signup-form" onSubmit={this.handleSubmit}>
                 
-                    <div className="signup-email">
-                    <label className ="user-label" htmlFor="email">Email</label>
+                    <div className="signup-username">
+                    <label className ="user-label" htmlFor="username">Username</label>
                     <input 
-                      name="signUpEmail"
+                      name="signUpUsername"
                       type="text" 
-                      id="email" 
-                      placeholder="Email"
+                      id="username" 
+                      placeholder="Username"
                       required
-                      onChange={e => this.updateEmail(e.target.value)}
+                      onChange={e => this.updateUsername(e.target.value)}
                     />
-                    {this.state.signUpEmail.touched && <ValidationError message={emailError} />}
+                    {this.state.signUpUsername.touched && <ValidationError message={usernameError} />}
                     </div>
                     <div className="signup-password">
                     <label className ="user-label" htmlFor="password">Password (one capital letter and one number needed)</label>
@@ -269,7 +290,7 @@ handleSubmit = (event) => {
                     /> 
                     {this.state.signUpPassword.touched && <ValidationError message={passwordError} />}
                     </div>
-                    <div className="signup-name">
+                    <div className="signup-fname">
                     <label className ="user-label" htmlFor="fname">First Name</label>
                     <input 
                       name="signUpFirstName"
@@ -279,7 +300,19 @@ handleSubmit = (event) => {
                       required
                       onChange={e => this.updateFirstName(e.target.value)}
                     /> 
-                    {this.state.signUpFirstName.touched && <ValidationError message={nameError} />}
+                    {this.state.signUpFirstName.touched && <ValidationError message={firstNameError} />}
+                    </div>
+                    <div>
+                    <label className ="user-label" htmlFor="lname">Last Name</label>
+                    <input 
+                      name="signUpLastName"
+                      type="text" 
+                      id="lname" 
+                      placeholder="Last Name"
+                      required
+                      onChange={e => this.updateLastName(e.target.value)}
+                    /> 
+                    {this.state.signUpLastName.touched && <ValidationError message={lastNameError} />}
                     </div>
                     <button className="small-btn" type="submit">Sign Up!</button>
                 </form>

@@ -29,7 +29,13 @@ export default class App extends React.Component {
   //component did mount to fetch all entries to pass down to other components
   //need an entries by user endpoint 
   componentDidMount() {
-    let getEntriesUrl = `${config.API_ENDPOINT}/entries/user/${TokenService.getUserId()}`;
+    let getEntriesUrl = ''
+    if (sessionStorage.user_id == undefined) {
+      getEntriesUrl = `${config.API_ENDPOINT}/entries`
+    } else {
+      getEntriesUrl = `${config.API_ENDPOINT}/entries/user/${TokenService.getUserId()}`;
+    }
+
     console.log(sessionStorage.user_id)
     fetch(getEntriesUrl)
       .then(response => response.json())

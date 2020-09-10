@@ -28,11 +28,11 @@ h2 {
 
 p {
   font-size: 20px;
-  color: grey;
+  color: gray;
 }
 
 a {
-  color: grey;
+  color: gray;
   text-decoration: none;
 }
 
@@ -48,7 +48,6 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-content: center;
-
 }
 
 .menu, li {
@@ -62,6 +61,7 @@ a:hover {
 
 .nav-link {
   list-style-type: none;
+  font-size: 22px;
 }
 
 ul {
@@ -76,10 +76,15 @@ li {
 
 button {
   margin: 3px;
+  cursor: pointer;
 }
 
 button:hover {
   background-color: #EBA29D
+}
+
+.submit-button {
+  color: gray;
 }
 
 .landing__container {
@@ -117,6 +122,13 @@ input {
 .overall-mood {
   margin: 10px;
   padding: 10px;
+  color: gray;
+  font-size: 20px;
+}
+
+.entry-name {
+  color: gray;
+  font-size: 20px;
 }
 
 @media screen and (min-width: 600px) {

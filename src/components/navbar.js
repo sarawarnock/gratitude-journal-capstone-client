@@ -22,7 +22,7 @@ export default class Navbar extends React.Component {
             <ul className="menu">
               <li className="nav-link"> <Link to='/newentry'>New Entry</Link></li>
               <li className="nav-link"><Link to='/home'>Home</Link></li>
-              <li><button className="small-btn logout-btn"><Link to="/" onClick={this.logOutClick}>Log Out</Link></button></li>
+              <li><button className="logout-btn"><Link to="/" onClick={this.logOutClick}>Log Out</Link></button></li>
             </ul>
             {/* <button className="small-btn logout-btn"><Link to="/" onClick={this.logOutClick}>Log Out</Link></button> */}
           </div> : ''}
