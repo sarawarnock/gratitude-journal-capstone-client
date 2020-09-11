@@ -28,12 +28,14 @@ export default function AllEntries(props) {
                     <div className="my-journal-entries">
                         {props.allEntries.map(entry => {
                             return (
-                                <div className="entry" key={entry.id}>
-                                    <h2>{entry.title}</h2>
-                                    <p> {entry.bullet_1} </p>
-                                    <p> {entry.bullet_2} </p>
-                                    <p> {entry.bullet_3} </p>
-                                    <p> {entry.mood} </p>
+                                <div className="entry__container">
+                                    <div className="entry" key={entry.id}>
+                                        <h2>{entry.title}</h2>
+                                        <p> 1. {entry.bullet_1} </p>
+                                        <p> 2. {entry.bullet_2} </p>
+                                        <p> 3. {entry.bullet_3} </p>
+                                        <p> Overall Mood: {entry.mood} </p>
+                                    </div>
                                 </div>
                         )})}
                     <Link to='/newentry'>

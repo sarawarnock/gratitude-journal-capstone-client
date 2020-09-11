@@ -158,7 +158,13 @@ input {
   font-size: 20px;
 }
 
+/* entry__container {
+  background-color: #F2E3CE;
+  opacity: .7;
+} */
+
 .entry {
+  color: black;
   background-color: #F2E3CE;
   opacity: .7;
 }
@@ -191,6 +197,11 @@ input {
   }
 
   .my-journal {
+    grid-area: journal;
+  }
+
+  .my-journal-entries {
+    display: block;
     grid-area: journal;
   }
 }
