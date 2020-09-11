@@ -1,5 +1,10 @@
-body {
-  background-color: #F2E3CE;
+html {
+  /* background-color: #F2E3CE; */
+  background: url(background.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .App {
@@ -15,34 +20,43 @@ body {
 h1 {
   font-family: 'Shadows Into Light Two', cursive;
   font-size: 44px;
-  color: grey;
+  color: black;
   padding: 0px;
   margin: 5px;
 }
 
 h2 {
-  color: #EBA29D;
+  /* color: #EBA29D; */
+  color: black;
+  /* color: #023B09; */
   font-size: 28px;
   margin: 0px;
 }
 
 p {
   font-size: 20px;
-  color: gray;
+  color: black;
 }
 
 a {
-  color: gray;
+  color: black;
   text-decoration: none;
 }
 
 a:active {
   text-decoration: underline;
+  /* text-decoration-color: #EBA29D; */
+  text-decoration-color: #F2E3CE;
 }
 
 a:hover {
   text-decoration: underline;
+  text-decoration-color: #F2E3CE;
 }
+
+/* .navbar {
+  background-color: #F2E3CE;
+} */
 
 .menu {
   display: flex;
@@ -64,6 +78,16 @@ a:hover {
   font-size: 22px;
 }
 
+.new {
+  background-color: #F2E3CE;
+  margin: 5px;
+}
+
+.home {
+  background-color: #F2E3CE;
+  margin: 5px;
+}
+
 ul {
   font-size: 16px;
   padding: 0px;
@@ -80,11 +104,12 @@ button {
 }
 
 button:hover {
-  background-color: #EBA29D
+  /* background-color: #EBA29D */
+  background-color: #F2E3CE;
 }
 
 .submit-button {
-  color: gray;
+  color: black;
 }
 
 .landing__container {
@@ -106,6 +131,8 @@ button:hover {
   /* border: 1px solid white; */
   margin: 10px;
   padding: 10px;
+  background-color: #F2E3CE;
+  opacity: .8;
 }
 
 .login__container, p {
@@ -122,13 +149,18 @@ input {
 .overall-mood {
   margin: 10px;
   padding: 10px;
-  color: gray;
+  color: black;
   font-size: 20px;
 }
 
 .entry-name {
-  color: gray;
+  color: black;
   font-size: 20px;
+}
+
+.entry {
+  background-color: #F2E3CE;
+  opacity: .7;
 }
 
 @media screen and (min-width: 600px) {
@@ -138,6 +170,7 @@ input {
     grid-template-areas: 
     "nav nav header header "
     ". main main ."
+    "journal journal journal journal"
     ;
   }
 
@@ -155,5 +188,9 @@ input {
 
   .main {
     grid-area: main;
+  }
+
+  .my-journal {
+    grid-area: journal;
   }
 }

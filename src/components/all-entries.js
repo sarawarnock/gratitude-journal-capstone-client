@@ -23,22 +23,24 @@ export default function AllEntries(props) {
     // }
     return (
         <div className="App">
-            <main className="main">
+            <div className="my-journal">
                 <h1>My Journal</h1>
-                    {props.allEntries.map(entry => {
-                        return (
-                            <div key={entry.id}>
-                                <h2>{entry.title}</h2>
-                                <p> {entry.bullet_1} </p>
-                                <p> {entry.bullet_2} </p>
-                                <p> {entry.bullet_3} </p>
-                                <p> {entry.mood} </p>
-                            </div>
-                    )})}
-                <Link to='/newentry'>
-                    <button>New Entry</button>
-                </Link>
-            </main>
+                    <div className="my-journal-entries">
+                        {props.allEntries.map(entry => {
+                            return (
+                                <div className="entry" key={entry.id}>
+                                    <h2>{entry.title}</h2>
+                                    <p> {entry.bullet_1} </p>
+                                    <p> {entry.bullet_2} </p>
+                                    <p> {entry.bullet_3} </p>
+                                    <p> {entry.mood} </p>
+                                </div>
+                        )})}
+                    <Link to='/newentry'>
+                        <button>New Entry</button>
+                    </Link>
+                </div>
+            </div>
         </div>
     )
 }
