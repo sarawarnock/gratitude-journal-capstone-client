@@ -32,7 +32,7 @@ export default class SignUp extends React.Component {
       },
       sessionUser: ''
   }
-  
+
   updateUsername(username) {
     this.setState({ signUpUsername: {value: username, touched: true } })
   }
@@ -59,8 +59,8 @@ export default class SignUp extends React.Component {
     if (inputUsername == undefined) {
        inputUsername = this.state.signUpUsername.value.trim();
     }
-    const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (!inputUsername.match(mailFormat)) {
+    const usernameFormat = /^(?=.{3,20}$)[a-zA-Z0-9]+(?:_[a-zA-Z0-9]+)+$/;
+    if (!inputUsername.match(usernameFormat)) {
       return 'Valid username is required'
     } return ' '
   }

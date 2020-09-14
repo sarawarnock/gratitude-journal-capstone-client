@@ -45,7 +45,8 @@ export default class Login extends React.Component {
        inputUsername = this.state.loginUsername.value.trim();
     }
     //const usernameFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    const usernameFormat = /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
+    // const usernameFormat = /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
+    const usernameFormat =  /^(?=.{3,20}$)[a-zA-Z0-9]+(?:_[a-zA-Z0-9]+)+$/;
     if (!inputUsername.match(usernameFormat)) {
       return 'Valid username is required'
     } return ' '
