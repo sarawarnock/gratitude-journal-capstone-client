@@ -173,6 +173,7 @@ input {
   .App {
     display: grid;
     grid-template-columns: 15% 35% 35% 15%;
+    /* grid-template-rows: 1fr; */
     grid-template-areas: 
     "nav nav header header "
     ". main main ."
@@ -203,5 +204,6 @@ input {
   .my-journal-entries {
     display: block;
     grid-area: journal;
+    grid-row-gap: 10px;
   }
 }
