@@ -38,9 +38,22 @@ export default function AllEntries(props) {
                                     </div>
                                 </div>
                         )})}
-                    <Link to='/newentry'>
+                    {/* <Link to='/newentry'>
                         <button className="button" id="button-3">New Entry</button>
-                    </Link>
+                    </Link> */}
+                    <div className="button" id="button-3">
+                        <div id="circle"></div>
+                        <a><Link to='/newentry' className="new-entry-button">New Entry</Link></a>
+                    </div>
+
+                    {/* <div className="button" id="button-3">
+                        <div id="circle"></div>
+                        <a>
+                            <Link to='/newentry'>
+                                <button className="button" id="button-3">New Entry</button>
+                            </Link>
+                        </a>
+                    </div> */}
                 </div>
             </div>
         </div>

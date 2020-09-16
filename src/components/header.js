@@ -5,7 +5,7 @@ export default function Header(props) {
     <div className="App">
       <header className="header">
         <h1>Gratiplicity</h1>
-          <h2>Your Daily Gratitude Journal</h2>
+          <h2 className="tagline">Your Daily Gratitude Journal</h2>
       </header>
     </div>
   );

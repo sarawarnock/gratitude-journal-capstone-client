@@ -24,13 +24,14 @@ html {
   border: 2px solid #BFC0C0;
   margin: 20px 20px 20px 20px;
   color: #BFC0C0;
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
   text-decoration: none;
   font-size: 1em;
   letter-spacing: 1.5px;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  cursor: pointer;
 }
 
 a {
@@ -75,6 +76,32 @@ a {
   color: #2D3142;
 }
 
+.new-entry-button {
+  color: white;
+}
+
+button {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1em;
+  text-transform: uppercase;
+  color: black;
+  border: none;
+  background-color: #F2E3CE;
+}
+
+/* button {
+  cursor: pointer;
+} */
+
+/* button:hover {
+  /* background-color: #EBA29D
+  background-color: #F2E3CE;
+} */
+
+/* .submit-button {
+  color: black;
+} */
+
 h1 {
   font-family: 'Shadows Into Light Two', cursive;
   font-size: 44px;
@@ -84,11 +111,16 @@ h1 {
 }
 
 h2 {
+  font-family: 'Shadows Into Light Two', cursive;
   /* color: #EBA29D; */
   color: black;
   /* color: #023B09; */
   font-size: 28px;
   margin: 0px;
+}
+
+.tagline {
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 p {
@@ -126,10 +158,10 @@ a:hover {
   align-content: center;
 }
 
-.nav-token {
+/* .nav-token {
   padding: 10px;
   margin: 0;
-}
+} */
 
 .nav-link {
   list-style-type: none;
@@ -143,7 +175,7 @@ a:hover {
 
 .new-entry {
   background-color: #F2E3CE;
-  opacity: .8;
+  opacity: .7;
 }
 
 .home {
@@ -161,26 +193,19 @@ li {
   list-style-type: none;
 }
 
-button {
-  cursor: pointer;
-}
-
-/* button:hover {
-  /* background-color: #EBA29D
+.container {
   background-color: #F2E3CE;
-} */
-
-/* .submit-button {
-  color: black;
-} */
+  opacity: .7;
+}
 
 .landing__container {
   display: flex;
   flex-direction: column;
   text-align: center;
-  border: 1px solid white;
   padding: 10px;
   margin: 10px;
+  background-color: #F2E3CE;
+  opacity: .7;
 }
 
 .landing__container, p {
@@ -194,7 +219,7 @@ button {
   margin: 10px;
   padding: 10px;
   background-color: #F2E3CE;
-  opacity: .8;
+  opacity: .7;
 }
 
 .login__container, p {
@@ -202,6 +227,16 @@ button {
   align-items: center;
   margin: 3px;
   padding: 0px;
+}
+
+.login-form {
+  background-color: #F2E3CE;
+  opacity: .7;
+}
+
+.signup-form {
+  background-color: #F2E3CE;
+  opacity: .7;
 }
 
 input {

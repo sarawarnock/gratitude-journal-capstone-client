@@ -170,7 +170,7 @@ export default class NewEntry extends Component {
                         </div> */}
                         <div className="button" id="button-3">
                             <div id="circle"></div>
-                            <a><button className="button" type="submit">Submit</button></a>
+                            <button type="submit">Submit</button>
                         </div>
                     </form>
                 </div>
