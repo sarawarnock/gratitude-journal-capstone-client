@@ -183,16 +183,12 @@ handleSubmit = (event) => {
                     /> 
                     {this.state.signUpLastName.touched && <ValidationError message={lastNameError} />}
                     </div>
-                    <button className="small-btn" type="submit">Sign Up!</button>
+                    <button className="button" type="submit">Sign Up!</button>
                 </form>
                 <div>
                     <h2>Already have an account?</h2>
-                    <button
-                    className="small-btn">
-                      <Link
-                        to='/login'>
-                      Login
-                      </Link>
+                    <button className="button">
+                      <Link to='/login'>Login</Link>
                     </button>
                 </div>
         </main>

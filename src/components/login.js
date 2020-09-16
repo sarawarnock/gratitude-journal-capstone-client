@@ -173,11 +173,11 @@ export default class Login extends React.Component {
                       required
                     /> 
                     {this.state.loginPassword.touched && <ValidationError message={passwordError} />}
-                    <button className="small-btn" type="submit"> Log In </button>
+                    <button className="button" type="submit"> Log In </button>
                 </form>
                 <div>
                     <h2>Don't have an account yet?</h2>
-                    <Link to='/signup'><button className="small-btn">Sign Up</button></Link>
+                    <Link to='/signup'><button className="button">Sign Up</button></Link>
                 </div>
         </main>
       </div>

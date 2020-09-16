@@ -134,7 +134,7 @@ export default class NewEntry extends Component {
         return (
             <div className="App">
                 <div className="main">
-                    <form onSubmit={this.handleSubmit}>
+                    <form className="new-entry" onSubmit={this.handleSubmit}>
                         <div className="gratitude-values">
                             <h2> What are you grateful for today? </h2>
                             <ul>
@@ -165,8 +165,12 @@ export default class NewEntry extends Component {
                             <input type="text" name="title" placeholder="Title" onChange={this.handleTitleChange} />
                         </div>
                         <br />
-                        <div className="submit-button">
-                            <button type="submit">Submit</button>
+                        {/* <div className="submit-button">
+                            <button className="button" type="submit">Submit</button>
+                        </div> */}
+                        <div className="button" id="button-3">
+                            <div id="circle"></div>
+                            <a><button className="button" type="submit">Submit</button></a>
                         </div>
                     </form>
                 </div>

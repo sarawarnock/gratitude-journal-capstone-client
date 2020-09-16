@@ -39,7 +39,7 @@ export default function AllEntries(props) {
                                 </div>
                         )})}
                     <Link to='/newentry'>
-                        <button>New Entry</button>
+                        <button className="button" id="button-3">New Entry</button>
                     </Link>
                 </div>
             </div>
