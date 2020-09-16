@@ -183,17 +183,18 @@ handleSubmit = (event) => {
                     /> 
                     {this.state.signUpLastName.touched && <ValidationError message={lastNameError} />}
                     </div>
-                    {/* <button className="button" type="submit">Sign Up!</button> */}
-                    <div className="button" id="button-3">
+                    <button className="button submit-button" type="submit">Sign Up!</button>
+
+                    {/* <div className="button" id="button-3">
                       <div id="circle"></div>
                       <button type="submit">Sign Up</button>
-                    </div>
+                    </div> */}
                 </form>
                 <div className="container">
                     <h2>Already have an account?</h2>
                     <div className="button" id="button-3">
                       <div id="circle"></div>
-                      <a><Link to='/login'>Login</Link></a>
+                      <Link className="a" to='/login'>Login</Link>
                     </div>
                 </div>
         </main>

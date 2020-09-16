@@ -13,20 +13,15 @@ export default class LandingPage extends React.Component {
               <p>Jot down 3 things that make you smile each day and keep track of your overall mood.</p>
               <div className="button" id="button-3">
                 <div id="circle"></div>
-                <a><Link to='/signup'>Sign Up</Link></a>
+                <Link className="a" to='/signup'>Sign Up</Link>
               </div>
               <div className="button" id="button-3">
                 <div id="circle"></div>
-                <a><Link to='/login'>Login</Link></a>
+                <Link className="a" to='/login'>Login</Link>
               </div>
               {/* <button className="button"> <Link to='/signup'> Sign Up </Link></button>
               <button className="button"> <Link to='/login'> Login</Link> </button> */}
           </div>
-          <div className="login__container">
-            <p>To login: </p>
-              <p>username: testuser</p>
-              <p>password: Testpassword1</p>
-            </div>
         </main>
       </div>
     );

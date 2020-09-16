@@ -34,10 +34,17 @@ html {
   cursor: pointer;
 }
 
-a {
-  color: #BFC0C0;
+.a {
+  /* color: #BFC0C0; */
   text-decoration: none;
   letter-spacing: 1px;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  letter-spacing: 1px;
+  color: black;
 }
 
 #button-3 {
@@ -80,6 +87,15 @@ a {
   color: white;
 }
 
+.submit-button {
+  color: black;
+}
+
+.submit-button:hover {
+  background-color: #BFC0C0;
+  transition: all .5s ease-Out;
+}
+
 button {
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 1em;
@@ -119,6 +135,18 @@ h2 {
   margin: 0px;
 }
 
+.header {
+  text-decoration: none;
+}
+
+.header:hover {
+  text-decoration: underline;
+}
+
+.header::after {
+  text-decoration: none;
+}
+
 .tagline {
   font-family: 'Open Sans Condensed', sans-serif;
 }
@@ -128,25 +156,37 @@ p {
   color: black;
 }
 
-a {
+/* a {
   color: black;
   text-decoration: none;
-}
+} */
 
-a:active {
+/* a:active {
   text-decoration: underline;
-  /* text-decoration-color: #EBA29D; */
   text-decoration-color: #F2E3CE;
 }
 
 a:hover {
   text-decoration: underline;
   text-decoration-color: #F2E3CE;
-}
+} */
 
 /* .navbar {
   background-color: #F2E3CE;
 } */
+
+label[for="hamburger"] {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.navbar input:checked ~ ul {
+  display: block;
+}
+
+.navbar input {
+  visibility: hidden
+}
 
 .menu {
   display: flex;
@@ -158,10 +198,10 @@ a:hover {
   align-content: center;
 }
 
-/* .nav-token {
+.nav-token {
   padding: 10px;
   margin: 0;
-} */
+}
 
 .nav-link {
   list-style-type: none;
@@ -216,7 +256,6 @@ li {
   display: flex;
   text-align: center;
   /* border: 1px solid white; */
-  margin: 10px;
   padding: 10px;
   background-color: #F2E3CE;
   opacity: .7;
@@ -225,7 +264,7 @@ li {
 .login__container, p {
   flex-direction: column;
   align-items: center;
-  margin: 3px;
+  line-height: 24px;
   padding: 0px;
 }
 
@@ -266,6 +305,27 @@ input {
   opacity: .7;
 }
 
+@media screen and (max-width: 600px) {
+  .header h2 {
+    display: none;
+  }
+
+  .signup-form {
+    width: 95%;
+    display: inline-block;
+  }
+
+  .login-form {
+    width: 95%;
+    display: inline-block;
+  }
+
+  .container {
+    width: 95%;
+    display: inline-block;
+  }
+}
+
 @media screen and (min-width: 600px) {
   .App {
     display: grid;
@@ -284,6 +344,14 @@ input {
 
   .menu {
     grid-area: nav;
+  }
+
+  .navbar #hamburger {
+    display: none;
+  }
+
+  .navbar label, #hamburger {
+    display: none;
   }
 
   main {

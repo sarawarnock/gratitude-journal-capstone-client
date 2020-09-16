@@ -67,8 +67,7 @@ export default class Login extends React.Component {
     //create an object to store the search filters
      const data = {}
     // const { loginUsername, loginPassword } = e.target
-    
-
+  
     //get all the from data from the form component
     const formData = new FormData(e.target)
 
@@ -173,19 +172,26 @@ export default class Login extends React.Component {
                       required
                     /> 
                     {this.state.loginPassword.touched && <ValidationError message={passwordError} />}
-                    {/* <button className="button" type="submit"> Log In </button> */}
+                    <button className="button submit-button" type="submit">Log In</button>
 
-                    <div className="button" id="button-3">
+                    {/* <div className="button" id="button-3">
                       <div id="circle"></div>
                       <button type="submit">Log In</button>
-                    </div>
+                    </div> */}
                 </form>
                 <div className="container">
                     <h2>Don't have an account yet?</h2>
                     <div className="button" id="button-3">
                       <div id="circle"></div>
-                      <a><Link to='/signup'>Sign Up</Link></a>
+                      <Link className="a" to='/signup'>Sign Up</Link>
                     </div>
+                </div>
+                <div className="login__container">
+                  <p>To login:
+                    <br />
+                  username: testuser
+                  <br />
+                  password: Testpassword1</p>
                 </div>
         </main>
       </div>
