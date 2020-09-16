@@ -6,8 +6,6 @@ export default class LandingPage extends React.Component {
     return (
       <div className="App">
         <main className="main">
-          {/* <h1>Gratiplicity</h1>
-            <h2>Your Daily Gratitude Jounal</h2> */}
             <div className="landing__container">
               <p>Keep track of the things you're grateful for, simply.</p>
               <p>Jot down 3 things that make you smile each day and keep track of your overall mood.</p>

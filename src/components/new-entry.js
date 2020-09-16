@@ -136,16 +136,21 @@ export default class NewEntry extends Component {
                 <div className="main">
                     <form className="new-entry" onSubmit={this.handleSubmit}>
                         <div className="gratitude-values">
-                            <h2> What are you grateful for today? </h2>
+                            <h2 className="values-title"> What are you grateful for today? </h2>
                             <ul>
                                 <li>
-                                    <input type="text" name="gratitudeValue1" placeholder="#1" onChange={this.handleGratitudeValue1Change} />
+                                <label for="inp" class="inp">
+                                    <input type="text" id="inp" name="gratitudeValue1" placeholder="#1" onChange={this.handleGratitudeValue1Change} />
+                                    <span class="focus-bg"></span>
+                                </label>
                                 </li>
                                 <li>
-                                    <input type="text" name="gratitudeValue2" placeholder="#2" onChange={this.handleGratitudeValue2Change} />
+                                    <input type="text" id="inp" name="gratitudeValue2" placeholder="#2" onChange={this.handleGratitudeValue2Change} />
+                                    <span class="focus-bg"></span>
                                 </li>
                                 <li>
-                                <input type="text" name="gratitudeValue3" placeholder="#3" onChange={this.handleGratitudeValue3Change} />
+                                    <input type="text" id="inp" name="gratitudeValue3" placeholder="#3" onChange={this.handleGratitudeValue3Change} />
+                                    <span class="focus-bg"></span>
                                 </li>
                             </ul>
                         </div>
@@ -165,13 +170,11 @@ export default class NewEntry extends Component {
                             <input type="text" name="title" placeholder="Title" onChange={this.handleTitleChange} />
                         </div>
                         <br />
-                        {/* <div className="submit-button">
-                            <button className="button" type="submit">Submit</button>
-                        </div> */}
-                        <div className="button" id="button-3">
+                        <button className="button submit-button" type="submit">Submit</button>
+                        {/* <div className="button" id="button-3">
                             <div id="circle"></div>
                             <button type="submit">Submit</button>
-                        </div>
+                        </div> */}
                     </form>
                 </div>
             </div>

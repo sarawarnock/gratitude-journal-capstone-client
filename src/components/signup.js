@@ -136,7 +136,7 @@ handleSubmit = (event) => {
                 <form className="signup-form" onSubmit={this.handleSubmit}>
                 
                     <div className="signup-username">
-                    <label className ="user-label" htmlFor="username">Username</label>
+                    {/* <label className ="user-label" htmlFor="username">Username</label> */}
                     <input 
                       name="signUpUsername"
                       type="text" 
@@ -148,19 +148,19 @@ handleSubmit = (event) => {
                     {this.state.signUpUsername.touched && <ValidationError message={usernameError} />}
                     </div>
                     <div className="signup-password">
-                    <label className ="user-label" htmlFor="password">Password (one capital letter and one number needed)</label>
+                    {/* <label className ="user-label" htmlFor="password">Password (one capital letter and one number needed)</label> */}
                     <input 
                       name="signUpPassword"
                       type="password" 
                       id="password" 
-                      placeholder="Password"
+                      placeholder="Password (one capital and one number needed)"
                       required
                       onChange={e => this.updatePassword(e.target.value)}
                     /> 
                     {this.state.signUpPassword.touched && <ValidationError message={passwordError} />}
                     </div>
                     <div className="signup-fname">
-                    <label className ="user-label" htmlFor="fname">First Name</label>
+                    {/* <label className ="user-label" htmlFor="fname">First Name</label> */}
                     <input 
                       name="signUpFirstName"
                       type="text" 
@@ -172,7 +172,7 @@ handleSubmit = (event) => {
                     {this.state.signUpFirstName.touched && <ValidationError message={firstNameError} />}
                     </div>
                     <div>
-                    <label className ="user-label" htmlFor="lname">Last Name</label>
+                    {/* <label className ="user-label" htmlFor="lname">Last Name</label> */}
                     <input 
                       name="signUpLastName"
                       type="text" 
@@ -183,12 +183,7 @@ handleSubmit = (event) => {
                     /> 
                     {this.state.signUpLastName.touched && <ValidationError message={lastNameError} />}
                     </div>
-                    <button className="button submit-button" type="submit">Sign Up!</button>
-
-                    {/* <div className="button" id="button-3">
-                      <div id="circle"></div>
-                      <button type="submit">Sign Up</button>
-                    </div> */}
+                    <button className="button submit-button" type="submit">Sign Up</button>
                 </form>
                 <div className="container">
                     <h2>Already have an account?</h2>

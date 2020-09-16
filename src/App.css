@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   /* background-color: #F2E3CE; */
   background: url(background.jpeg) no-repeat center center fixed;
@@ -81,6 +85,7 @@ a {
 
 #button-3:hover a {
   color: #2D3142;
+  font-weight: bolder;
 }
 
 .new-entry-button {
@@ -94,6 +99,7 @@ a {
 .submit-button:hover {
   background-color: #BFC0C0;
   transition: all .5s ease-Out;
+  font-weight: bolder;
 }
 
 button {
@@ -282,6 +288,115 @@ input {
   margin: 5px;
 }
 
+input[type="radio"] {
+  display: none;
+}
+
+input[type=text] {
+  border: none;
+}
+
+input[type=password] {
+
+}
+
+/* ============================= */
+
+/* .inp {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 280px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+  .label {
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    font-size: 16px;
+    /* color: rgba(.5); 
+    font-weight: 500;
+    transform-origin: 0 0;
+    transform: translate3d(0,0,0);
+    transition: all .2s ease;
+    pointer-events: none;
+  }
+  .focus-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(.05);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+  } */
+
+  input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 90%;
+    border: 0;
+    font-family: 'Open Sans Condensed', sans-serif;;
+    padding: 16px 12px 0 12px;
+    height: 56px;
+    font-size: 16px;
+    /* font-weight: 900; */
+    /* background: rgba(.02); */
+    box-shadow: inset 0 -1px 0 rgba(.3);
+    color: black;
+    font-weight: bolder;
+    transition: all .15s ease;
+  }
+
+    input:hover {
+      /* background: rgba(.04); */
+      box-shadow: inset 0 -1px 0 rgba(.5);
+    }
+    
+    input:not(:placeholder-shown) 
+      + .label {
+        /* color: rgba(.5); */
+        transform: translate3d(0,-12px,0) scale(.75);
+    }
+    input:focus {
+      /* background: rgba(.05); */
+      outline: none;
+      box-shadow: inset 0 -2px 0;
+    }
+      input .label {
+        color: black;
+        transform: translate3d(0,-12px,0) scale(.75)
+      }
+        input .focus-bg {
+          transform: scaleX(1);
+          transition: all .1s ease;
+    }
+
+/* ============================= */
+
+.values-title {
+  padding-top: 10px;
+}
+
+.overall-mood label {
+  display: grid;
+  text-align: center;
+  border: 2px solid white;
+  margin: 10px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+input:checked + label {
+  background-color: #BFC0C0;
+  color: black;
+  font-weight: bolder;
+}
+
 .overall-mood {
   margin: 10px;
   padding: 10px;
@@ -356,6 +471,9 @@ input {
 
   main {
     grid-area: main;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
   }
 
   .main {
