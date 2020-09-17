@@ -107,20 +107,8 @@ button {
   color: black;
   border: none;
   background-color: #F2E3CE;
-}
-
-/* button {
   cursor: pointer;
-} */
-
-/* button:hover {
-  /* background-color: #EBA29D
-  background-color: #F2E3CE;
-} */
-
-/* .submit-button {
-  color: black;
-} */
+}
 
 h1 {
   font-family: 'Shadows Into Light Two', cursive;

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import config from '../config'
-import TokenService from '../services/token-service.js';
 
 export default class NewEntry extends Component {
     state ={
@@ -170,10 +169,6 @@ export default class NewEntry extends Component {
                         </div>
                         <br />
                         <button className="button submit-button" type="submit">Submit</button>
-                        {/* <div className="button" id="button-3">
-                            <div id="circle"></div>
-                            <button type="submit">Submit</button>
-                        </div> */}
                     </form>
                 </div>
             </div>

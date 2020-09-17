@@ -32,13 +32,6 @@ export default class Navbar extends React.Component {
         <HamburgerMenu
           isOpen={this.state.open}
           menuClicked={this.handleClick.bind(this)}
-          // width={18}
-          // height={15}
-          // strokeWidth={1}
-          // rotate={0}
-          // color='white'
-          // borderRadius={0}
-          // animationDuration={0.5}
         />
     )
   }

@@ -44,8 +44,6 @@ export default class Login extends React.Component {
     if (inputUsername == undefined) {
        inputUsername = this.state.loginUsername.value.trim();
     }
-    //const usernameFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    // const usernameFormat = /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
     const usernameFormat =  /^(?=.{3,20}$)[a-zA-Z0-9]+(?:_[a-zA-Z0-9]+)+$/;
     if (!inputUsername.match(usernameFormat)) {
       return 'Valid username is required'
@@ -151,7 +149,6 @@ export default class Login extends React.Component {
                   onSubmit={this.handleSubmit}
                 >
                   {validationError}
-                    {/* <label className ="user-label" htmlFor="username">Username</label> */}
                     <input 
                       name="loginUsername"
                       type="text" 
@@ -162,7 +159,6 @@ export default class Login extends React.Component {
                     />
                     {this.state.loginUsername.touched && <ValidationError message={usernameError} />}
                     
-                    {/* <label className ="user-label" htmlFor="password">Password</label> */}
                     <input 
                       name="loginPassword"
                       type="password" 
@@ -174,10 +170,6 @@ export default class Login extends React.Component {
                     {this.state.loginPassword.touched && <ValidationError message={passwordError} />}
                     <button className="button submit-button" type="submit">Log In</button>
 
-                    {/* <div className="button" id="button-3">
-                      <div id="circle"></div>
-                      <button type="submit">Log In</button>
-                    </div> */}
                 </form>
                 <div className="container">
                     <h2>Don't have an account yet?</h2>

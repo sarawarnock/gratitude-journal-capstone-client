@@ -27,7 +27,6 @@ export default class App extends React.Component {
   }
 
   //component did mount to fetch all entries to pass down to other components
-  //need an entries by user endpoint 
   componentDidMount() {
     let getEntriesUrl = ''
     if (sessionStorage.user_id == undefined) {
@@ -47,12 +46,6 @@ export default class App extends React.Component {
       })
       .catch(error => this.setState({ error }))
   }
-
-  // updateAllEntries = newEntry => {
-  //   this.setState({
-  //     allEntries: [...this.state.allEntries, newEntry]
-  //   })
-  // }
 
   //renders the Navbar
   renderNav() {
