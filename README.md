@@ -63,15 +63,15 @@ All Entries Page
 ## Screenshots
 Landing/Login Page 
 :-------------------------:
-![Landing Page](/github-images/screenshots/landing-page.jpg)  
+![Landing Page](/github-images/screenshots/landing-page.png)  
 Sign Up Page
-![Sign Up Page](/github-images/screenshots/signup.jpg)
+![Sign Up Page](/github-images/screenshots/signup.png)
 Login Page
-![Login Page](/github-images/screenshots/login.jpg)
+![Login Page](/github-images/screenshots/login.png)
 New Entry Page
-![New Entry Page](/github-images/screenshots/new-entry.jpg)
+![New Entry Page](/github-images/screenshots/new-entry.png)
 All Entries Page
-![All Entries Page](/github-images/screenshots/all-entries.jpg)
+![All Entries Page](/github-images/screenshots/all-entries.png)
 
 
 ## Functionality
