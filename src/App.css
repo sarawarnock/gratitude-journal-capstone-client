@@ -154,6 +154,10 @@ h2 {
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
+.journal-title {
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.81);
+}
+
 p {
   font-size: 24px;
   color: black;
