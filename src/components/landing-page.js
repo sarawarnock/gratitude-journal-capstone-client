@@ -17,6 +17,8 @@ export default class LandingPage extends React.Component {
                 <div id="circle"></div>
                 <Link className="a" to='/login'>Login</Link>
               </div>
+              <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
               {/* <button className="button"> <Link to='/signup'> Sign Up </Link></button>
               <button className="button"> <Link to='/login'> Login</Link> </button> */}
           </div>

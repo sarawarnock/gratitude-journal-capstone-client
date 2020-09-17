@@ -138,16 +138,16 @@ h2 {
   margin: 0px;
 }
 
+header {
+  width: 100%;
+}
+
 .header {
   text-decoration: none;
 }
 
 .header:hover {
   text-decoration: underline;
-}
-
-.header::after {
-  text-decoration: none;
 }
 
 .tagline {
@@ -188,26 +188,32 @@ label[for="hamburger"] {
 }
 
 .menu {
-  display: flex;
+  /* display: flex; */
   max-width: 100%;
 }
 
-.nav input#hamburger:checked ~ li {
+.navbar {
+  padding: 10px;
+  margin: 20px;
+}
+
+/* .nav input#hamburger:checked ~ li {
   display: block;
 }
 
 .nav input {
   visibility: hidden
-}
+} */
 
 /* .menu, li {
   align-content: center;
 } */
 
-.nav-token {
+/* .nav-token {
+  display: inline;
   padding: 10px;
   margin: 0;
-}
+} */
 
 /* .nav-link {
   list-style-type: none;
@@ -241,12 +247,14 @@ li {
 .container {
   background-color: #F2E3CE;
   opacity: .7;
+  padding: 10px;
 }
 
 .landing__container {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   text-align: center;
+  line-height: 30px;
   padding: 10px;
   margin: 10px;
   background-color: #F2E3CE;
@@ -255,6 +263,7 @@ li {
 
 .landing__container, p {
   align-items: center;
+  line-height: 30px;
 }
 
 /* .login__container {
@@ -265,11 +274,10 @@ li {
   opacity: .7;
 } */
 
-.login__container, p {
-  flex-direction: column;
+.container, p {
+  /* flex-direction: column; */
   align-items: center;
   line-height: 24px;
-  padding: 0px;
 }
 
 .login-form {
@@ -412,6 +420,11 @@ input:checked + label {
 }
 
 @media screen and (max-width: 600px) {
+  .navbar {
+    padding: 10px;
+    margin: 20px;
+  }
+
   .header h2 {
     display: none;
   }
@@ -424,11 +437,13 @@ input:checked + label {
   .login-form {
     width: 95%;
     display: inline-block;
+    padding: 10px;
   }
 
   .container {
     width: 95%;
     display: inline-block;
+    margin-bottom: 10px;
   }
 }
 
@@ -448,6 +463,11 @@ input:checked + label {
     grid-area: header;
   }
 
+  .navbar {
+    padding: 10px;
+    margin: 20px;
+  }
+
   .menu {
     display: grid;
     grid-area: nav;
@@ -459,18 +479,18 @@ input:checked + label {
   align-content: center;
 } */
 
-  .navbar #hamburger {
+  /* .navbar #hamburger {
     display: none;
   }
 
   .navbar label, #hamburger {
     display: none;
-  }
+  } */
 
-  .navbar ul li {
+  /* .navbar ul li {
     display: block;
     cursor: pointer;
-  }
+  } */
 
   main {
     grid-area: main;

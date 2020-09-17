@@ -162,7 +162,7 @@ export default class Login extends React.Component {
                     />
                     {this.state.loginUsername.touched && <ValidationError message={usernameError} />}
                     
-                    <label className ="user-label" htmlFor="password">Password</label>
+                    {/* <label className ="user-label" htmlFor="password">Password</label> */}
                     <input 
                       name="loginPassword"
                       type="password" 
