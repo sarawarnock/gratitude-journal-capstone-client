@@ -8,23 +8,11 @@ export default function AllEntries(props) {
         return (
             <p>Sorry, no entries to display!</p>
         )
-    } 
-    // else if (props.allEntries.length == 1) {
-    //     console.log(props.allEntries.length)
-    //     return (
-    //         <div key={props.allEntries.id}>
-    //             <h2>{props.allEntries.title}</h2>
-    //             <p> {props.allEntries.bullet_1} </p>
-    //             <p> {props.allEntries.bullet_2} </p>
-    //             <p> {props.allEntries.bullet_3} </p>
-    //             <p> {props.allEntries.mood} </p>
-    //         </div>
-    //     )
-    // }
+    }
     return (
         <div className="App">
             <div className="my-journal">
-                <h1>My Journal</h1>
+                <h1 className="journal-title">My Journal</h1>
                     <div className="my-journal-entries">
                         {props.allEntries.map(entry => {
                             return (

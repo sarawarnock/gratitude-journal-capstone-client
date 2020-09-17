@@ -166,7 +166,6 @@ export default class NewEntry extends Component {
                             <label htmlFor="sad">Sad</label>
                         </div>
                         <div className="entry-name">
-                            Name your entry:
                             <input type="text" name="title" placeholder="Title" onChange={this.handleTitleChange} />
                         </div>
                         <br />

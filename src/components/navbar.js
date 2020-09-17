@@ -18,7 +18,8 @@ export default class Navbar extends React.Component {
         <nav role="navigation" className="nav">
                   <label htmlFor="hamburger">&#9776;</label>
                   <input type="checkbox" id="hamburger"/>
-          {TokenService.hasAuthToken() ? <div className='nav-token'>
+          {/* {TokenService.hasAuthToken() ?  */}
+          <div className='nav-token'>
             <ul className="menu">
               <li>
                 <div className="button" id="button-3">
@@ -39,7 +40,8 @@ export default class Navbar extends React.Component {
                 </div>
               </li>
             </ul>
-          </div> : ''}
+          </div> 
+          {/* : ''} */}
         </nav>
       </div>
     );
