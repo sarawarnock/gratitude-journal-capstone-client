@@ -3,11 +3,11 @@
 Purpose: to provide a space for a registered user to make short gratitude journal entries and click a simple button for “overall mood" to keep track of their day and what they are grateful for.
 
 ## Working Prototype
-You can access a working prototype of the React app here: https://legoinventory.herokuapp.com/ and Node app here: https://gratitude-journal-server.herokuapp.com/
+You can access a working prototype of the React app here: https://gratitude-journal-capstone-client.vercel.app/ and Node app here: https://gratitude-journal-server.herokuapp.com/
 
 
 ## User Stories
-This app is for two types of users; a visitor, and a logged-in user.
+This app is for two types of users: a visitor and a logged-in user.
 
 
 #### Landing Page
@@ -54,8 +54,6 @@ Sign Up Page
 ![Sign Up Page](/github-images/wireframes/signup.jpg)
 Login Page
 ![Login Page](/github-images/wireframes/login.jpg)
-<!-- Forgot Password Page
-![Forgot Password Page](/github-images/wireframes/forgot-password.jpg) -->
 New Entry Page
 ![New Entry Page](/github-images/wireframes/new-entry.jpg)
 All Entries Page
@@ -66,6 +64,14 @@ All Entries Page
 Landing/Login Page 
 :-------------------------:
 ![Landing Page](/github-images/screenshots/landing-page.jpg)  
+Sign Up Page
+![Sign Up Page](/github-images/screenshots/signup.jpg)
+Login Page
+![Login Page](/github-images/screenshots/login.jpg)
+New Entry Page
+![New Entry Page](/github-images/screenshots/new-entry.jpg)
+All Entries Page
+![All Entries Page](/github-images/screenshots/all-entries.jpg)
 
 
 ## Functionality
@@ -96,7 +102,7 @@ The app's functionality includes:
 * users
     * id
     * user_name (minimum 6 characters)
-    * password (minimum 8 characters, 1 uppercase, 1 symbol)
+    * password (minimum 8 characters, 1 uppercase, 1 number)
     * first_name (minimum 2 characters)
     * last_name (minimum 2 characters)
 
@@ -118,6 +124,13 @@ The app's functionality includes:
 
 ## API Documentation
 API Documentation details: 
+* get all users => /api/users
+* get users by id => /api/users/:user_id
+* get all entries => /api/entries
+* get entry by id => /api/entries/:entry_id
+* post new user => /api/users
+* post new entry => /api/entries
+* post auth login => /api/auth/login
 
 ## Responsive
 App is built to be usable on mobile devices, as well as responsive across mobile, tablet, laptop, and desktop screen resolutions.
@@ -125,6 +138,8 @@ App is built to be usable on mobile devices, as well as responsive across mobile
 ## Development Roadmap
 This is v1.0 of the app, but future enhancements are expected to include:
 * Forgot Password 
+* Color code entries based on mood
+* Publicly show some entries
 * More than 3 gratitude points (a + component)
 * Add/upload photos
 * Weather report for your location (mood based on weather)
