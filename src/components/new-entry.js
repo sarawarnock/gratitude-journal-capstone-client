@@ -139,7 +139,7 @@ export default class NewEntry extends Component {
                             <h2 className="values-title"> What are you grateful for today? </h2>
                             <ul>
                                 <li>
-                                <label for="inp" class="inp">
+                                <label htmlFor="inp" class="inp">
                                     <input type="text" id="inp" name="gratitudeValue1" placeholder="#1" onChange={this.handleGratitudeValue1Change} />
                                     <span class="focus-bg"></span>
                                 </label>

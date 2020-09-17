@@ -155,7 +155,7 @@ h2 {
 }
 
 .journal-title {
-  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.81);
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.81);
 }
 
 p {
@@ -183,31 +183,26 @@ a:hover {
 } */
 
 label[for="hamburger"] {
-  font-size: 30px;
+  font-size: 40px;
   cursor: pointer;
 }
 
-navbar, li {
-  display: none;
+.menu {
+  display: flex;
+  max-width: 100%;
 }
 
-.navbar input#hamburger:checked ~ ul {
+.nav input#hamburger:checked ~ li {
   display: block;
 }
 
-/* .navbar input {
+.nav input {
   visibility: hidden
+}
+
+/* .menu, li {
+  align-content: center;
 } */
-
-.menu {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-}
-
-.menu, li {
-  align-content: center;
-}
 
 .nav-token {
   padding: 10px;
@@ -227,6 +222,7 @@ navbar, li {
 .new-entry {
   background-color: #F2E3CE;
   opacity: .7;
+  margin: 20px;
 }
 
 .home {
@@ -261,13 +257,13 @@ li {
   align-items: center;
 }
 
-.login__container {
+/* .login__container {
   display: flex;
   text-align: center;
   padding: 10px;
   background-color: #F2E3CE;
   opacity: .7;
-}
+} */
 
 .login__container, p {
   flex-direction: column;
@@ -383,6 +379,10 @@ input[type="radio"] {
   font-size: 22px;
 }
 
+input:hover + label {
+  cursor: pointer;
+}
+
 input:checked + label {
   background-color: #BFC0C0;
   color: black;
@@ -449,8 +449,15 @@ input:checked + label {
   }
 
   .menu {
+    display: grid;
     grid-area: nav;
   }
+
+  /* .menu {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+} */
 
   .navbar #hamburger {
     display: none;
