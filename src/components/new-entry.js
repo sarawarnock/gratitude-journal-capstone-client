@@ -108,7 +108,7 @@ export default class NewEntry extends Component {
             data[value[0]] = value[1]
         }
 
-        let { gratitudeValue1, gratitudeValue2, gratitudeValue3, overallMood, title } = data
+        let { gratitudeValue1, gratitudeValue2, gratitudeValue3, mood, title } = data
 
         let payload = {
             title: this.checkString(data.title),
