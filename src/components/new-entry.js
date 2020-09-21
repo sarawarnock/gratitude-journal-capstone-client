@@ -108,7 +108,7 @@ export default class NewEntry extends Component {
             data[value[0]] = value[1]
         }
 
-        let { gratitudeValue1, gratitudeValue2, gratitudeValue3, overallMood, title } = data
+        // let { gratitudeValue1, gratitudeValue2, gratitudeValue3, overallMood, title, user_id } = data
 
         let payload = {
             title: this.checkString(data.title),
@@ -120,31 +120,31 @@ export default class NewEntry extends Component {
             is_public: 0
         }
 
-        if (this.validateEntry(gratitudeValue1) === '') {
+        if (this.validateEntry(data.gratitudeValue1) === '') {
             this.setState({
                 error: 'Entry cannot be blank'
             })
         }
 
-        if (this.validateEntry(gratitudeValue2) === '') {
+        if (this.validateEntry(data.gratitudeValue2) === '') {
             this.setState({
                 error: 'Entry cannot be blank'
             })
         }
 
-        if (this.validateEntry(gratitudeValue3) === '') {
+        if (this.validateEntry(data.gratitudeValue3) === '') {
             this.setState({
                 error: 'Entry cannot be blank'
             })
         }
 
-        if (this.validateMood(overallMood) === '') {
+        if (this.validateMood(data.overallMood) === '') {
             this.setState({
                 error: 'Mood cannot be blank'
             })
         }
 
-        if (this.validateTitle(title) === '') {
+        if (this.validateTitle(data.title) === '') {
             this.setState({
                 error: 'Title cannot be blank'
             })
