@@ -93,12 +93,12 @@ export default class Navbar extends React.Component {
   render() {
     return (
         <nav role="navigation" className="nav">
-          {/* {TokenService.hasAuthToken() ? <div className='nav-token'> */}
+          {TokenService.hasAuthToken() ? <div className='nav-token'>
           <div className='navbar'>
                 { this.state.open ?  this.displayMobileMenu() : null}
                 {window.innerWidth > 900 ? this.displayNavBar() : this.displayHamburgerMenu()}
           </div>
-          {/* </div> : ''} */}
+          </div> : ''}
         </nav>
     );
   }
