@@ -34,15 +34,12 @@ export default class App extends React.Component {
     } else {
       getEntriesUrl = `${config.API_ENDPOINT}/entries/user/${TokenService.getUserId()}`;
     }
-
-    console.log(sessionStorage.user_id)
     fetch(getEntriesUrl)
       .then(response => response.json())
       .then(entries => {
         this.setState({
           allEntries: entries
         });
-        console.log(this.state.allEntries)
       })
       .catch(error => this.setState({ error }))
   }
@@ -58,7 +55,6 @@ export default class App extends React.Component {
 
   //renders the main pages
   renderMainPages = () => {
-    console.log(this.state)
     return (
       <div className="main-pages">
         <Switch>

@@ -98,7 +98,6 @@ export default class SignUp extends React.Component {
 handleSubmit = (event) => {
   event.preventDefault();
   const { signUpUsername, signUpPassword, signUpFirstName, signUpLastName } = event.target;
-  console.log('username:', signUpUsername.value, 'password:', signUpPassword.value);
   this.setState({ error: null })
   AuthApiService.postUser({
       username: signUpUsername.value,
@@ -108,7 +107,6 @@ handleSubmit = (event) => {
   })
 
   .then(response => {
-      console.log('username:', response)
       signUpUsername.value = ''
       signUpPassword.value = ''
       TokenService.saveAuthToken(response.authToken)

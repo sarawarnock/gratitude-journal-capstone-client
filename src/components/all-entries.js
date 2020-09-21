@@ -2,9 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function AllEntries(props) {
-    console.log(props.allEntries)
     if ((props.allEntries.length) && (props.allEntries.length == 0)) {
-        console.log(props.allEntries.length)
         return (
             <p>Sorry, no entries to display!</p>
         )

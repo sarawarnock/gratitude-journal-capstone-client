@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import config from '../config'
+import ValidationError from './validation-error'
 
 export default class NewEntry extends Component {
     state ={
@@ -10,7 +11,13 @@ export default class NewEntry extends Component {
         bullet_2: '',
         bullet_3: '',
         mood: '',
-        title: ''
+        title: '',
+        error: null,
+        errors: {
+            entryError: 'Entry cannot be blank',
+            moodError: 'Mood cannot be blank',
+            titleError: 'Title cannot be blank'
+        }
     }
 
     updateSessionUser(userId) {
@@ -64,6 +71,30 @@ export default class NewEntry extends Component {
         return outputText;
     }
 
+    validateEntry(entry) {
+        if (entry == undefined) {
+            return (
+                'Field cannot be left blank'
+            )
+        } return ' '
+    }
+
+    validateMood(mood) {
+        if (mood == undefined) {
+            return (
+                'Mood cannot be blank'
+            )
+        } return ' '
+    }
+
+    validateTitle(title) {
+        if (title == undefined) {
+            return (
+                'Title cannot be blank'
+            )
+        } return ' '
+    }
+
     //onSubmit = post to database
     handleSubmit = (e) => {
         e.preventDefault();
@@ -76,7 +107,6 @@ export default class NewEntry extends Component {
         for (let value of formData) {
             data[value[0]] = value[1]
         }
-        console.log(data)
 
         let payload = {
             title: this.checkString(data.title),
@@ -87,7 +117,6 @@ export default class NewEntry extends Component {
             mood: this.checkString(data.overallMood),
             is_public: 0
         }
-        console.log(payload)
         fetch(`${config.API_ENDPOINT}/entries`, {
             method: 'POST',
             headers: {
@@ -105,8 +134,6 @@ export default class NewEntry extends Component {
             })
                 // use the json api output
             .then(data => {
-              //check if there is meaningfull data
-              console.log(data);
               // check if there are no results
               if (data.totalItems === 0) {
                 throw new Error('No data found')
@@ -130,6 +157,14 @@ export default class NewEntry extends Component {
     }
 
     render() {
+        let validationError = ''
+        if (this.state.error != '') {
+            validationError = this.state.error
+        }
+
+        const entryError = this.validateEntry();
+        const titleError = this.validateTitle();
+
         return (
             <div className="App">
                 <div className="main">
@@ -138,18 +173,29 @@ export default class NewEntry extends Component {
                             <h2 className="values-title"> What are you grateful for today? </h2>
                             <ul>
                                 <li>
-                                <label htmlFor="inp" class="inp">
-                                    <input type="text" id="inp" name="gratitudeValue1" placeholder="#1" onChange={this.handleGratitudeValue1Change} />
-                                    <span class="focus-bg"></span>
-                                </label>
+                                    <label htmlFor="inp" class="inp">
+                                        {validationError}
+                                        <input type="text" id="inp" name="gratitudeValue1" placeholder="#1" onChange={this.handleGratitudeValue1Change} />
+                                        {this.state.bullet_1.touched && <ValidationError message={entryError} />}
+                                        <span class="focus-bg"></span>
+                                        <span class="error" aria-live="polite"></span>
+                                    </label>
                                 </li>
                                 <li>
-                                    <input type="text" id="inp" name="gratitudeValue2" placeholder="#2" onChange={this.handleGratitudeValue2Change} />
-                                    <span class="focus-bg"></span>
+                                    <label htmlFor="inp" class="inp">
+                                        <input type="text" id="inp" name="gratitudeValue2" placeholder="#2" onChange={this.handleGratitudeValue2Change} />
+                                        {this.state.bullet_2.touched && <ValidationError message={entryError} />}
+                                        <span class="focus-bg"></span>
+                                        <span class="error" aria-live="polite"></span>
+                                    </label>
                                 </li>
                                 <li>
-                                    <input type="text" id="inp" name="gratitudeValue3" placeholder="#3" onChange={this.handleGratitudeValue3Change} />
-                                    <span class="focus-bg"></span>
+                                    <label htmlFor="inp" class="inp">
+                                        <input type="text" id="inp" name="gratitudeValue3" placeholder="#3" onChange={this.handleGratitudeValue3Change} />
+                                        {this.state.bullet_3.touched && <ValidationError message={entryError} />}
+                                        <span class="focus-bg"></span>
+                                        <span class="error" aria-live="polite"></span>
+                                    </label>
                                 </li>
                             </ul>
                         </div>
@@ -166,6 +212,7 @@ export default class NewEntry extends Component {
                         </div>
                         <div className="entry-name">
                             <input type="text" name="title" placeholder="Title" onChange={this.handleTitleChange} />
+                            {this.state.title.touched && <ValidationError message={titleError} />}
                         </div>
                         <br />
                         <button className="button submit-button" type="submit">Submit</button>

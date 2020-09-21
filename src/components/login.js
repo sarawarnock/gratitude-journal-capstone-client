@@ -73,7 +73,6 @@ export default class Login extends React.Component {
     for (let value of formData) {
         data[value[0]] = value[1]
     }
-    console.log(data)
     let {loginUsername, loginPassword} = data
   
     if (this.validateUsername(loginUsername) === '') {
@@ -97,8 +96,6 @@ export default class Login extends React.Component {
     })
 
     //check if the state is populated with the search params data
-    console.log(this.state)
-
     AuthApiService.postLogin({
       username: loginUsername,
       password: loginPassword
@@ -109,16 +106,13 @@ export default class Login extends React.Component {
         this.setState({
           error: 'Username and/or password are not valid'
         })
-        console.log(this.state)
       }
       else {
-        console.log('response ID', response)
         TokenService.saveAuthToken(response.authToken) 
         TokenService.saveUserId(response.userId)
         TokenService.saveUserName(response.first_name)
         window.location = `/home`
         this.updateSessionUser(response.userId)
-        console.log(this.state.sessionUser)
       }
     })
     .catch(err => {
