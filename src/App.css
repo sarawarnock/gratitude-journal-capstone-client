@@ -154,8 +154,12 @@ p {
   color: black;
 }
 
-.menu {
+/* .menu {
   max-width: 100%;
+} */
+
+.menu-button {
+  font-size: 14px;
 }
 
 .navbar {

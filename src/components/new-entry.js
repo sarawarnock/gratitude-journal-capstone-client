@@ -79,8 +79,8 @@ export default class NewEntry extends Component {
         } return ' '
     }
 
-    validateMood(mood) {
-        if (mood == undefined) {
+    validateMood(overallMood) {
+        if (overallMood == undefined) {
             return (
                 'Mood cannot be blank'
             )
@@ -108,6 +108,8 @@ export default class NewEntry extends Component {
             data[value[0]] = value[1]
         }
 
+        let { gratitudeValue1, gratitudeValue2, gratitudeValue3, overallMood, title } = data
+
         let payload = {
             title: this.checkString(data.title),
             user_id: sessionStorage.user_id,
@@ -117,6 +119,37 @@ export default class NewEntry extends Component {
             mood: this.checkString(data.overallMood),
             is_public: 0
         }
+
+        if (this.validateEntry(gratitudeValue1) === '') {
+            this.setState({
+                error: 'Entry cannot be blank'
+            })
+        }
+
+        if (this.validateEntry(gratitudeValue2) === '') {
+            this.setState({
+                error: 'Entry cannot be blank'
+            })
+        }
+
+        if (this.validateEntry(gratitudeValue3) === '') {
+            this.setState({
+                error: 'Entry cannot be blank'
+            })
+        }
+
+        if (this.validateMoode(overallMood) === '') {
+            this.setState({
+                error: 'Mood cannot be blank'
+            })
+        }
+
+        if (this.validateTitle(title) === '') {
+            this.setState({
+                error: 'Title cannot be blank'
+            })
+        }
+
         fetch(`${config.API_ENDPOINT}/entries`, {
             method: 'POST',
             headers: {
@@ -161,7 +194,6 @@ export default class NewEntry extends Component {
         if (this.state.error != '') {
             validationError = this.state.error
         }
-
         const entryError = this.validateEntry();
         const titleError = this.validateTitle();
 
@@ -209,6 +241,7 @@ export default class NewEntry extends Component {
 
                             <input type="radio" id="sad" name="overallMood" value="Sad" onClick={this.handleMoodChange} />
                             <label htmlFor="sad">Sad</label>
+                            {this.state.overallMood.touched && <ValidationError message={titleError} />}
                         </div>
                         <div className="entry-name">
                             <input type="text" name="title" placeholder="Title" onChange={this.handleTitleChange} />
