@@ -79,8 +79,8 @@ export default class NewEntry extends Component {
         } return ' '
     }
 
-    validateMood(overallMood) {
-        if (overallMood == undefined) {
+    validateMood(mood) {
+        if (mood == undefined) {
             return (
                 'Mood cannot be blank'
             )
@@ -138,7 +138,7 @@ export default class NewEntry extends Component {
             })
         }
 
-        if (this.validateMoode(overallMood) === '') {
+        if (this.validateMoode(mood) === '') {
             this.setState({
                 error: 'Mood cannot be blank'
             })
@@ -241,7 +241,7 @@ export default class NewEntry extends Component {
 
                             <input type="radio" id="sad" name="overallMood" value="Sad" onClick={this.handleMoodChange} />
                             <label htmlFor="sad">Sad</label>
-                            {this.state.overallMood.touched && <ValidationError message={titleError} />}
+                            {this.state.mood.touched && <ValidationError message={titleError} />}
                         </div>
                         <div className="entry-name">
                             <input type="text" name="title" placeholder="Title" onChange={this.handleTitleChange} />
