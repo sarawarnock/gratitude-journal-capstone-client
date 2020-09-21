@@ -138,7 +138,7 @@ export default class NewEntry extends Component {
             })
         }
 
-        if (this.validateMoode(mood) === '') {
+        if (this.validateMood(mood) === '') {
             this.setState({
                 error: 'Mood cannot be blank'
             })
