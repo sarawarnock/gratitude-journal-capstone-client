@@ -196,6 +196,7 @@ export default class NewEntry extends Component {
         }
         const entryError = this.validateEntry();
         const titleError = this.validateTitle();
+        const moodError = this.validateMood();
 
         return (
             <div className="App">
@@ -241,7 +242,7 @@ export default class NewEntry extends Component {
 
                             <input type="radio" id="sad" name="overallMood" value="Sad" onClick={this.handleMoodChange} />
                             <label htmlFor="sad">Sad</label>
-                            {this.state.mood.touched && <ValidationError message={titleError} />}
+                            {/* {this.state.mood.touched && <ValidationError message={moodError} />} */}
                         </div>
                         <div className="entry-name">
                             <input type="text" name="title" placeholder="Title" onChange={this.handleTitleChange} />
