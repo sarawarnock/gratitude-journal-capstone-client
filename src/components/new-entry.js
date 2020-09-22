@@ -13,6 +13,9 @@ export default class NewEntry extends Component {
         mood: '',
         title: '',
         error: null,
+        entryError: null,
+        titleError: null,
+        moodError: null
         // errors: {
         //     entryError: 'Entry cannot be blank',
         //     moodError: 'Mood cannot be blank',
@@ -73,26 +76,26 @@ export default class NewEntry extends Component {
 
     validateEntry(entry) {
         if (entry == '') {
-            return (
-                'Field cannot be left blank'
-            )
-        } return ' '
+            this.setState({
+                entryError: 'Entry cannot be left blank'
+            })
+        }
     }
 
     validateMood(mood) {
         if (mood == '') {
-            return (
-                'Mood cannot be blank'
-            )
-        } return ' '
+            this.setState({
+                moodError: 'Mood cannot be left blank'
+            })
+        }
     }
 
     validateTitle(title) {
         if (title == '') {
-            return (
-                'Title cannot be blank'
-            )
-        } return ' '
+            this.setState({
+                titleError: 'Title cannot be left blank'
+            })
+        } return
     }
     
     //onSubmit = post to database
@@ -191,9 +194,17 @@ export default class NewEntry extends Component {
     }
 
     render() {
-        let validationError = ''
-        if (this.state.error != '') {
-            validationError = this.state.error
+        let entryError = ''
+        let moodError = ''
+        let titleError = ''
+        if (this.state.entryError != '') {
+            entryError = this.state.entryError
+        }
+        else if (this.state.moodError != '') {
+            moodError = this.state.moodError
+        } 
+        else if (this.state.titleError != '') {
+            titleError = this.state.titleError
         }
         // const entryError = this.validateEntry();
         // const titleError = this.validateTitle();
@@ -211,7 +222,7 @@ export default class NewEntry extends Component {
                                         
                                         <input type="text" id="inp" name="gratitudeValue1" placeholder="#1" onChange={this.handleGratitudeValue1Change} />
                                         {/* {this.state.bullet_1.touched && <ValidationError message={entryError} />} */}
-                                        <div>{validationError}</div>
+                                        <div>{entryError}</div>
                                         <span className="focus-bg"></span>
                                         <span className="error" aria-live="polite"></span>
                                     </label>
@@ -220,7 +231,7 @@ export default class NewEntry extends Component {
                                     <label htmlFor="inp" className="inp">
                                         <input type="text" id="inp" name="gratitudeValue2" placeholder="#2" onChange={this.handleGratitudeValue2Change} />
                                         {/* {this.state.bullet_2.touched && <ValidationError message={entryError} />} */}
-                                        <div>{validationError}</div>
+                                        <div>{entryError}</div>
                                         <span className="focus-bg"></span>
                                         <span className="error" aria-live="polite"></span>
                                     </label>
@@ -229,7 +240,7 @@ export default class NewEntry extends Component {
                                     <label htmlFor="inp" className="inp">
                                         <input type="text" id="inp" name="gratitudeValue3" placeholder="#3" onChange={this.handleGratitudeValue3Change} />
                                         {/* {this.state.bullet_3.touched && <ValidationError message={entryError} />} */}
-                                        <div>{validationError}</div>
+                                        <div>{entryError}</div>
                                         <span className="focus-bg"></span>
                                         <span className="error" aria-live="polite"></span>
                                     </label>
@@ -246,12 +257,12 @@ export default class NewEntry extends Component {
 
                             <input type="radio" id="sad" name="overallMood" value="Sad" onClick={this.handleMoodChange} />
                             <label htmlFor="sad">Sad</label>
-                            {/* {this.state.mood.touched && <ValidationError message={moodError} />} */}
+                            <div>{moodError}</div>
                         </div>
                         <div className="entry-name">
                             <input type="text" name="title" placeholder="Title" onChange={this.handleTitleChange} />
                             {/* {this.state.title.touched && <ValidationError message={titleError} />} */}
-                            <div>{validationError}</div>
+                            <div>{titleError}</div>
                         </div>
                         <br />
                         <button className="button submit-button" type="submit">Submit</button>
