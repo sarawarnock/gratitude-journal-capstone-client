@@ -320,16 +320,13 @@ input:checked + label {
   color: black;
   background-color: #F2E3CE;
   opacity: .7;
+  padding: 5px;
 }
 
 .entry__container {
   margin: 5px;
   padding: 10px;
 }
-
-/* .my-journal-entries {
-  width: 95%;
-} */
 
 @media screen and (max-width: 600px) {
   .navbar {
