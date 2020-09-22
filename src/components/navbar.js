@@ -12,7 +12,6 @@ export default class Navbar extends React.Component {
     }
   }
 
-
   logOutClick = () => {
     //console.log('Logging out')
     TokenService.clearAuthToken()

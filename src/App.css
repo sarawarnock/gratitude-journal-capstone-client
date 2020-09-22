@@ -354,6 +354,15 @@ input:checked + label {
     margin: 20px;
   }
 
+  .nav-button {
+    display: flex;
+    flex-direction: row;
+    text-transform: uppercase;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+  }  
+
   .header h2 {
     display: none;
   }

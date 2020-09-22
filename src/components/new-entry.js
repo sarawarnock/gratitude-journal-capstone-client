@@ -251,6 +251,7 @@ export default class NewEntry extends Component {
                         <div className="entry-name">
                             <input type="text" name="title" placeholder="Title" onChange={this.handleTitleChange} />
                             {/* {this.state.title.touched && <ValidationError message={titleError} />} */}
+                            <div>{validationError}</div>
                         </div>
                         <br />
                         <button className="button submit-button" type="submit">Submit</button>
