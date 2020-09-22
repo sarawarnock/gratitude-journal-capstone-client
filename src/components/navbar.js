@@ -40,19 +40,19 @@ export default class Navbar extends React.Component {
     return (
         <nav role="navigation" className="nav">
             <ul className="menu">
-              <li class="menu-button">
+              <li className="menu-button">
                 <div className="button" id="button-3">
                   <div id="circle"></div>
                   <Link className="a" to='/newentry'>New Entry</Link>
                 </div>
               </li>
-              <li class="menu-button">
+              <li className="menu-button">
                 <div className="button" id="button-3">
                   <div id="circle"></div>
                   <Link className="a" to='/home'>Home</Link>
                 </div>
               </li>
-              <li class="menu-button">
+              <li className="menu-button">
                 <div className="button" id="button-3">
                   <div id="circle"></div>
                   <Link className="a" to="/" onClick={this.logOutClick}>Log Out</Link>
@@ -66,23 +66,23 @@ export default class Navbar extends React.Component {
   displayMobileMenu = () => {
     return (
         <nav role="navigation" className="hamburgerDropDown">
-            <ul className="menu">
-              <li class="menu-button">
-                <div className="button" id="button-3">
-                  <div id="circle"></div>
-                  <Link className="a" to='/newentry'>New Entry</Link>
+            <ul className="mobile-menu">
+              <li className="menu-button">
+                <div className="nav-button">
+                  {/* <div id="circle"></div> */}
+                  <Link className="mob-link" to='/newentry'>New Entry</Link>
                 </div>
               </li>
-              <li class="menu-button">
-                <div className="button" id="button-3">
-                  <div id="circle"></div>
-                  <Link className="a" to='/home'>Home</Link>
+              <li className="menu-button">
+                <div className="nav-button">
+                  {/* <div id="circle"></div> */}
+                  <Link className="mob-link" to='/home'>Home</Link>
                 </div>
               </li>
-              <li class="menu-button">
-                <div className="button" id="button-3">
-                  <div id="circle"></div>
-                  <Link className="a" to="/" onClick={this.logOutClick}>Log Out</Link>
+              <li className="menu-button">
+                <div className="nav-button">
+                  {/* <div id="circle"></div> */}
+                  <Link className="mob-link" to="/" onClick={this.logOutClick}>Log Out</Link>
                 </div>
               </li>
             </ul>
@@ -93,12 +93,12 @@ export default class Navbar extends React.Component {
   render() {
     return (
         <nav role="navigation" className="nav">
-          {TokenService.hasAuthToken() ? <div className='nav-token'>
+          {/* {TokenService.hasAuthToken() ? <div className='nav-token'> */}
           <div className='navbar'>
                 { this.state.open ?  this.displayMobileMenu() : null}
                 {window.innerWidth > 900 ? this.displayNavBar() : this.displayHamburgerMenu()}
           </div>
-          </div> : ''}
+          {/* </div> : ''} */}
         </nav>
     );
   }

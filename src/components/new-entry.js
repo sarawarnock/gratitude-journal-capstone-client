@@ -13,11 +13,11 @@ export default class NewEntry extends Component {
         mood: '',
         title: '',
         error: null,
-        errors: {
-            entryError: 'Entry cannot be blank',
-            moodError: 'Mood cannot be blank',
-            titleError: 'Title cannot be blank'
-        }
+        // errors: {
+        //     entryError: 'Entry cannot be blank',
+        //     moodError: 'Mood cannot be blank',
+        //     titleError: 'Title cannot be blank'
+        // }
     }
 
     updateSessionUser(userId) {
@@ -72,7 +72,7 @@ export default class NewEntry extends Component {
     }
 
     validateEntry(entry) {
-        if (entry == undefined) {
+        if (entry == '') {
             return (
                 'Field cannot be left blank'
             )
@@ -80,7 +80,7 @@ export default class NewEntry extends Component {
     }
 
     validateMood(mood) {
-        if (mood == undefined) {
+        if (mood == '') {
             return (
                 'Mood cannot be blank'
             )
@@ -88,15 +88,16 @@ export default class NewEntry extends Component {
     }
 
     validateTitle(title) {
-        if (title == undefined) {
+        if (title == '') {
             return (
                 'Title cannot be blank'
             )
         } return ' '
     }
-
+    
     //onSubmit = post to database
     handleSubmit = (e) => {
+        console.log(this.state)
         e.preventDefault();
 
         const data = {}
@@ -194,9 +195,9 @@ export default class NewEntry extends Component {
         if (this.state.error != '') {
             validationError = this.state.error
         }
-        const entryError = this.validateEntry();
-        const titleError = this.validateTitle();
-        const moodError = this.validateMood();
+        // const entryError = this.validateEntry();
+        // const titleError = this.validateTitle();
+        // const moodError = this.validateMood();
 
         return (
             <div className="App">
@@ -206,28 +207,31 @@ export default class NewEntry extends Component {
                             <h2 className="values-title"> What are you grateful for today? </h2>
                             <ul>
                                 <li>
-                                    <label htmlFor="inp" class="inp">
-                                        {validationError}
+                                    <label htmlFor="inp" className="inp">
+                                        
                                         <input type="text" id="inp" name="gratitudeValue1" placeholder="#1" onChange={this.handleGratitudeValue1Change} />
-                                        {this.state.bullet_1.touched && <ValidationError message={entryError} />}
-                                        <span class="focus-bg"></span>
-                                        <span class="error" aria-live="polite"></span>
+                                        {/* {this.state.bullet_1.touched && <ValidationError message={entryError} />} */}
+                                        <div>{validationError}</div>
+                                        <span className="focus-bg"></span>
+                                        <span className="error" aria-live="polite"></span>
                                     </label>
                                 </li>
                                 <li>
-                                    <label htmlFor="inp" class="inp">
+                                    <label htmlFor="inp" className="inp">
                                         <input type="text" id="inp" name="gratitudeValue2" placeholder="#2" onChange={this.handleGratitudeValue2Change} />
-                                        {this.state.bullet_2.touched && <ValidationError message={entryError} />}
-                                        <span class="focus-bg"></span>
-                                        <span class="error" aria-live="polite"></span>
+                                        {/* {this.state.bullet_2.touched && <ValidationError message={entryError} />} */}
+                                        <div>{validationError}</div>
+                                        <span className="focus-bg"></span>
+                                        <span className="error" aria-live="polite"></span>
                                     </label>
                                 </li>
                                 <li>
-                                    <label htmlFor="inp" class="inp">
+                                    <label htmlFor="inp" className="inp">
                                         <input type="text" id="inp" name="gratitudeValue3" placeholder="#3" onChange={this.handleGratitudeValue3Change} />
-                                        {this.state.bullet_3.touched && <ValidationError message={entryError} />}
-                                        <span class="focus-bg"></span>
-                                        <span class="error" aria-live="polite"></span>
+                                        {/* {this.state.bullet_3.touched && <ValidationError message={entryError} />} */}
+                                        <div>{validationError}</div>
+                                        <span className="focus-bg"></span>
+                                        <span className="error" aria-live="polite"></span>
                                     </label>
                                 </li>
                             </ul>
@@ -246,7 +250,7 @@ export default class NewEntry extends Component {
                         </div>
                         <div className="entry-name">
                             <input type="text" name="title" placeholder="Title" onChange={this.handleTitleChange} />
-                            {this.state.title.touched && <ValidationError message={titleError} />}
+                            {/* {this.state.title.touched && <ValidationError message={titleError} />} */}
                         </div>
                         <br />
                         <button className="button submit-button" type="submit">Submit</button>

@@ -15,10 +15,10 @@ export default class Login extends React.Component {
       value: '',
       touched: false
     },
-    errors: {
-      loginUsername: 'You must enter a valid username',
-      loginPassword: 'You must enter a valid password',
-    },
+    // errors: {
+    //   loginUsername: 'You must enter a valid username',
+    //   loginPassword: 'You must enter a valid password',
+    // },
     sessionUser: ''
 }
 
