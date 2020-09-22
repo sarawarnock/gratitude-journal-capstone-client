@@ -327,9 +327,9 @@ input:checked + label {
   padding: 10px;
 }
 
-.my-journal-entries {
+/* .my-journal-entries {
   width: 95%;
-}
+} */
 
 @media screen and (max-width: 600px) {
   .navbar {
