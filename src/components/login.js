@@ -15,10 +15,6 @@ export default class Login extends React.Component {
       value: '',
       touched: false
     },
-    // errors: {
-    //   loginUsername: 'You must enter a valid username',
-    //   loginPassword: 'You must enter a valid password',
-    // },
     sessionUser: ''
 }
 
@@ -131,9 +127,7 @@ export default class Login extends React.Component {
     if (this.state.error != '') {
       validationError = this.state.error
     }
-    
-    const usernameError = this.validateUsername();
-    const passwordError = this.validatePassword();
+  
     return (
       <div className="App">
         <main>
@@ -151,7 +145,6 @@ export default class Login extends React.Component {
                       onChange={e => this.updateUsername(e.target.value)}
                       required
                     />
-                    {this.state.loginUsername.touched && <ValidationError message={usernameError} />}
                     
                     <input 
                       name="loginPassword"
@@ -161,7 +154,6 @@ export default class Login extends React.Component {
                       onChange={e => this.updatePassword(e.target.value)}
                       required
                     /> 
-                    {this.state.loginPassword.touched && <ValidationError message={passwordError} />}
                     <button className="button submit-button" type="submit">Log In</button>
 
                 </form>

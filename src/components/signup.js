@@ -24,12 +24,6 @@ export default class SignUp extends React.Component {
         value: '',
         touched: false
       },
-      // errors: {
-      //   signUpUsername: 'You must enter a valid username',
-      //   signUpPassword: 'You must enter a valid password',
-      //   signUpFirstName: 'You must enter a valid name',
-      //   signUpLastName: 'You must enter a valid name'
-      // },
       sessionUser: ''
   }
 
